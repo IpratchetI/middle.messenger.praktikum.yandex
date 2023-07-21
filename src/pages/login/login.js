@@ -1,26 +1,12 @@
-import Handlebars from 'handlebars';
-import login from './login.hbs';
-import inputLogin from './src/partials/inputLogin.hbs';
+import tpl from './login.hbs';
 
-Handlebars.registerPartial('inputLogin', inputLogin);
-
-const root = document.querySelector('#app');
-
-const result = login({
-    enter: 'Вход',
+window.addEventListener("DOMContentLoaded", () => {
+    document.getElementById('app').innerHTML = tpl({ 
+        header: 'Вход',
+        elOne: 'Авторизация',
+        elTwo: 'Регистрация',
+        elThree: 'Cписок чатов',
+        elFour: 'Настройки пользователя',
+        page404: 'Cтраница 404'
+    });
 });
-        
-root.innerHTML = result;
-
-
-
-// const text = tpl({props});
-// const text = tpl({ 
-//     text: 'some text'
-//  });
-// const login = new login (
-//     'div',
-//     {
-//         text: 'some text'
-//     }
-// );

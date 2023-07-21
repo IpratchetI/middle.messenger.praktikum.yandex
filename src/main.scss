@@ -1,0 +1,41 @@
+@import 'src/styles/color.scss';
+@import 'src/styles/typography.scss';
+// @import 'src/login/login.scss';
+
+.main-list {
+    display:block;
+    width: 400px;
+    height: 540px;
+    border-radius: 15px;
+    border: 5px solid $purple;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    text-align: center;
+
+    &__header {
+        font-size: $max-size;
+        width: 260px;
+        height: 40px;
+        text-align: center;
+        font-weight: 700;
+        margin-left: 70px;
+        margin-top: 75px;
+        padding-bottom: 68px;
+    };
+
+    &__element {
+        display: flex;
+        height: 30px;
+        color: $black;
+        font-family: Roboto Flex;
+        font-size: $medium-size;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-left: 25%;
+        text-decoration: none;
+    };
+}
