@@ -1,12 +1,17 @@
-import tpl from './login.hbs';
+import login from './login.hbs';
+import './login.scss'; // если надо
 
-window.addEventListener("DOMContentLoaded", () => {
-    document.getElementById('app').innerHTML = tpl({ 
-        header: 'Вход',
-        elOne: 'Авторизация',
-        elTwo: 'Регистрация',
-        elThree: 'Cписок чатов',
-        elFour: 'Настройки пользователя',
-        page404: 'Cтраница 404'
+export default ({}) => {
+    return login({
+        headerLogin: 'Вход',
+        inputLogin: 'Логин',
+        
     });
-});
+}
+
+// document.getElementById('app').innerHTML = tpl({ 
+//     headerlogin: 'Вход',
+    
+// });
+
+// console.log(window.location.href)
