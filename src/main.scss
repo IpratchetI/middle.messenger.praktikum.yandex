@@ -1,7 +1,14 @@
 @import 'src/styles/color.scss';
 @import 'src/styles/typography.scss';
-// @import './pages/login/login.scss';
+@import 'src/pages/login/login.scss';
+@import 'src/pages/register/register.scss';
+@import 'src/pages/notFound/notFound.scss';
+@import 'src/pages/chat/chat.scss';
 
+body {
+    margin:0;
+    padding:0;
+}
 .main-list {
     display:block;
     width: 400px;
@@ -14,6 +21,7 @@
     transform: translate(-50%, -50%);
     position: fixed;
     text-align: center;
+    
 
     &__header {
         font-size: $max-size;
@@ -26,16 +34,18 @@
         padding-bottom: 68px;
     };
 
-    &__element {
+    &__button {
         display: flex;
-        height: 30px;
+        width: 260px;
+        height: 40px;
         color: $black;
         font-family: Roboto Flex;
         font-size: $medium-size;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
-        margin-left: 25%;
-        text-decoration: none;
+        margin-top: 20px;
+        text-align: center;
+
     };
 }

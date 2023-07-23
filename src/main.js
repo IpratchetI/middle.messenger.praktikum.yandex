@@ -1,159 +1,90 @@
-import tpl from './main.hbs';
-import login from './pages/login/login';
-import register from './pages/register/register';
-console.log(window.location.href)
+import { login } from './pages/login/login.js';
+import { register } from './pages/register/register.js';
+import mainTemplate from './main.hbs';
+import { notFound } from './pages/notFound/notFound.js';
+import { chat } from './pages/chat/chat.js';
+import './main.scss'; 
 
-document.getElementById('app').innerHTML = tpl({ 
-    header: 'Список страниц',
-    elOne: 'Авторизация',
-    elTwo: 'Регистрация',
-    elThree: 'Cписок чатов',
-    elFour: 'Настройки пользователя',
-    page404: 'Cтраница 404'
-});
+const root = document.getElementById('app');
 
-const root = document.querySelector('#app');
+const main = ({ headerLogin, inputLogin }) => {
+    return mainTemplate({
+      header: 'Вход',
+    });
+  };
 
 const handleRoute = () => {
-    const url = window.location.pathname;
-  
+  const url = window.location.pathname;
+
     if (url === '/login') {
-      renderLogin();
+    root.innerHTML = login ({
+      pageTitle: 'Login Page',
+      content: login({
+        headerLogin: 'Вход',
+        inputLogin: 'Логин',
+      }),
+    });
     } else if (url === '/register') {
-      renderRegister();
-    } else {
-      renderNotFound();
+    root.innerHTML = register ({
+      pageTitle: 'Registration Page',
+      content: register({
+        register: 'Регистрация',
+      }),
+    });
+    } else if (url === '/') {
+    root.innerHTML = mainTemplate ({
+      pageTitle: 'Main Page',
+      content: main({
+        header: 'Вход',
+      }),
+    });
+    } else if (url === '/notFound') {
+        root.innerHTML = notFound ({
+          pageTitle: '404',
+          content: notFound ({
+            Error: '404',
+            wrongWay: 'Не туда попали',
+            back: 'назад к чатам',
+          }),
+        });
+    } else if (url === '/chat') {
+        root.innerHTML = chat ({
+          pageTitle: 'chat',
+          content: chat ({
+            profile: 'Профиль',
+            search: 'Поиск',
+          }),
+        });
+    }
+};
+
+const handleButtonClick = (event) => {
+    const target = event.target;
+  
+    if (target.tagName === 'BUTTON') {
+      const destination = target.getAttribute('data-destination');
+      if (destination) {
+        window.history.pushState(null, null, destination);
+        handleRoute();
+      }
     }
   };
-  window.addEventListener('popstate', handleRoute);
 
-// Initial rendering when the page loads
-handleRoute();
+// const handleButtonClick = (event) => {
+//   const target = event.target;
 
-// if(window.location.href == 'login') {
-//     console.log('111')
-//     root.innerHTML = login ({
-//         headerLogin: 'Вход',
-//         inputLogin: 'Логин',
-//     });
-// } else if (window.location.href == 'register'){
-//     console.log('222')
-//     root.innerHTML = register ({
-//         register: 'Регистрация'
-//     });
-// };
-
-
-
-
-// window.addEventListener("DOMContentLoaded", () => {
-//     document.getElementById('app').innerHTML = tpl({ 
-//         header: 'Список страниц',
-//         elOne: 'Авторизация',
-//         elTwo: 'Регистрация',
-//         elThree: 'Cписок чатов',
-//         elFour: 'Настройки пользователя',
-//         page404: 'Cтраница 404'
-//     });
-// });
-
-
-
-// import login from './pages/login/login.hbs'
-// console.log(222)
-
-// window.addEventListener("DOMContentLoaded", () => {
-//     document.getElementById('loginPage').innerHTML = login({ 
-//         headerLogin: 'Вход',
-        
-//     });
-// });
-
-
-
-
-// //ROUTER
-// let routes = {};
-// let templates = {};
-
-// let app_div = document.getElementById('app');
-
-
-// //DOM element 
-// function login() {
-//     let div = document.createElement('div');
-//     let link = document.createElement('a');
-//     link.href = '#/about';
-//     link.innerText = 'About';
-
-//     div.innerHTML = '<h1>Login</h1>';
-//     div.appendChild(link);
-
-//     app_div.appendChild(div);
-// };
-
-// function about() {
-//     let div = document.createElement('div');
-//     let link = document.createElement('a');
-//     link.href = '#/src/login/login.js';
-//     link.innerText = 'Login';
-
-//     div.innerHTML = '<h1>About</h1>';
-//     div.appendChild(link);
-
-//     app_div.appendChild(div);
-// };
-// //определение маршрутов
-// function route (path, template) {
-//     if (typeof template === 'function') {
-//         return routes[path] = template;
+//   if (target.tagName === 'BUTTON') {
+//     const destination = target.getAttribute('data-destination');
+//     if (destination) {
+//       window.history.pushState(null, null, destination);
+//       handleRoute();
+//       event.preventDefault();
 //     }
-//     else if (typeof template === 'string') {
-//         return routes[path] = templates[template];
-//     } else {
-//         return;
-//     };
+//   }
 // };
 
-// //регистрация функции которая действует как механизм шаблонов
-// //Функция шаблона принимает два аргумента:
-// // name: имя шаблона.
-// // templateFunction: функция, которая создаст элементы DOM.
+document.addEventListener('click', handleButtonClick);
 
-// function template (name, templateFunction) {
-//     return templates[name] = templateFunction;
-// };
+window.addEventListener('popstate', handleRoute);
 
-// //сопоставление маршрута с шаблоном
-// template('login', function(){
-//     login();
-// });
-
-// template('about', function(){
-//     about();
-// });
-
-// //маршрут к отображению шаблона
-// route('/', 'login');
-// route('/about', 'about');
-
-// //обнаруживаем и разрешаем зменения в URL
-// function resolveRoute(route) {
-//     try {
-//         return routes[route];
-//     } catch (e) {
-//         throw new Error(`Route ${route} not found`);
-//     };
-// };
-
-// //функция которая извлекает маршрут из хэша URL и вызывает функцию шаблона
-// function router(evt) {
-//     let url = window.location.hash.slice(1) || '/';
-//     let route = resolveRoute(url);
-
-//     route();
-// };
-
-// //
-// window.addEventListener('load', router);
-// window.addEventListener('hashchange', router);
+handleRoute();

@@ -1,0 +1,51 @@
+.chat-profile-icon {
+    width: 25px;
+    height: 25px;   
+}
+.chat-form {
+    background: $white;
+    display: flex;
+    font-family: Roboto Flex;
+
+    &__left-menu {
+        width: 500px;
+        height: 100%;
+        border-right: 3px solid $purple;
+    }
+    &__profile {
+        display: flex;
+        width: 90%;
+        height: 25px;
+        flex-direction: column;
+        font-size: $large-size;
+        text-align: end;
+        color: $grey;
+        margin-top: 30px;
+        cursor: pointer;
+    }
+    &__search-form {
+        width: 100%;
+        margin-top: 25px;
+        align-items: center;
+
+    }
+    &__search {
+        display: block;
+        width: 400px;
+        height: 40px;
+        text-align: center;
+        margin-left: 50px;
+        border-radius: 5px;
+        border: 1px solid $purple;
+        background: $white;
+        cursor: pointer;
+    }
+    &__contacts {
+        width: 100%;
+    }
+    &__contact-form {
+        width: 100%;
+    }
+    &__avatar {
+    }
+}

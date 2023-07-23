@@ -1,8 +1,14 @@
-import tpl from './register.hbs';
+import registerTemplate from './register.hbs';
 
-export default ({}) => {
-    return tpl({
-        register: 'Регистрация',
-        
-    });
-}
+export const register = ({ headerLogin, inputLogin }) => {
+  return registerTemplate({
+    headerRegister: 'Регистрация',
+    inputMail: 'Почта',
+    inputLogin: 'Логин',
+    inputFirstName: 'Имя',
+    inputSecondName: 'Фамилия',
+    inputPhone: 'Телефон',
+    inputPassword: 'Пароль',
+    inputPasswordRepeat: 'Повторите пароль',
+  });
+};

@@ -1,1 +1,43 @@
-<div>{{register}}</div>
+<div class="form">
+    <div class="register-form">
+        <div class="register-form__header">
+            {{headerRegister}}
+        </div>
+        <div class="register-form__input-header">
+            {{inputMail}}
+        </div>
+        <input class="register-form__input-field" type='text' placeholder="введите почту">
+
+        <div class="register-form__input-header">
+            {{inputLogin}}
+        </div>
+        <input class="register-form__input-field" type='text' placeholder="введите логин">
+
+        <div class="register-form__input-header">
+            {{inputFirstName}}
+        </div>
+        <input class="register-form__input-field" type='text' placeholder="введите имя">
+
+        <div class="register-form__input-header">
+            {{inputSecondName}}
+        </div>
+        <input class="register-form__input-field" type='text' placeholder="введите фамилию">
+
+        <div class="register-form__input-header">
+            {{inputPhone}}
+        </div>
+        <input class="register-form__input-field" type='text' placeholder="введите телефон">
+
+        <div class="register-form__input-header">
+            {{inputPassword}}
+        </div>
+        <input class="register-form__input-field" type='password' placeholder="введите пароль">
+
+        <div class="register-form__input-header">
+            {{inputPasswordRepeat}}
+        </div>
+        <input class="register-form__input-field" type='password' placeholder="введите пароль(ещё раз)">
+
+        <button class="register-form__btn" data-destination="/login">Регистрация</button>
+    </div>
+</div>
