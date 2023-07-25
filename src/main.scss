@@ -4,6 +4,8 @@
 @import 'src/pages/register/register.scss';
 @import 'src/pages/notFound/notFound.scss';
 @import 'src/pages/chat/chat.scss';
+@import 'src/pages/userOpt/userOptions.scss';
+@import 'src/pages/changePassword/changePassword.scss';
 
 body {
     margin:0;
@@ -33,19 +35,30 @@ body {
         margin-top: 75px;
         padding-bottom: 68px;
     };
-
-    &__button {
-        display: flex;
-        width: 260px;
-        height: 40px;
-        color: $black;
-        font-family: Roboto Flex;
-        font-size: $medium-size;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        margin-top: 20px;
-        text-align: center;
-
-    };
 }
+.button {
+    display: flex;
+    width: 260px;
+    height: 40px;
+    color: $white;
+    font-family: Roboto Flex;
+    font-size: $medium-size;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 20px;
+    text-align: center;
+    margin-left: 70px;
+    background-color: $purple;
+    border: 2px solid $purple-light;
+    border-radius: 10px;
+    align-items: center;
+    cursor: pointer;
+};
+
+.button:hover {
+    outline-color: transparent;
+    outline-style:solid;
+    box-shadow: 0 0 0 2px $purple-light;
+}
+

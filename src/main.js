@@ -3,6 +3,8 @@ import { register } from './pages/register/register.js';
 import mainTemplate from './main.hbs';
 import { notFound } from './pages/notFound/notFound.js';
 import { chat } from './pages/chat/chat.js';
+import { userOpt } from './pages/userOpt/userOptions.js';
+import { changePassword } from './pages/changePassword/changePassword.js';
 import './main.scss'; 
 
 const root = document.getElementById('app');
@@ -55,7 +57,25 @@ const handleRoute = () => {
             search: 'Поиск',
           }),
         });
-    }
+    } else if (url === '/userOpt') {
+      root.innerHTML = userOpt ({
+        pageTitle: 'userOpt',
+        content: userOpt ({
+          display_name: 'Pratchet',
+          email: 'pochta@yandex.ru',
+          first_name: 'Александр',
+          second_name: 'Царьков',
+          phone: '+7(903)-333-33-33', 
+        }),
+      });
+  } else if (url === '/changePassword') {
+    root.innerHTML = changePassword ({
+      pageTitle: 'changePassword',
+      content: changePassword ({
+        
+      }),
+    });
+}
 };
 
 const handleButtonClick = (event) => {
