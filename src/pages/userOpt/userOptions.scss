@@ -1,0 +1,75 @@
+
+.profile-settings {
+    width: 900px;
+    height: 800px;
+    border: 2px solid $purple;
+    border-radius: 10px;
+    background-color: $white;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    position: fixed;
+
+}
+
+.profile-setting-avatar {
+    width: 150px;
+    height: 150px;
+    margin-left: 375px;
+    margin-top: 21px;
+}
+.profile-settings-name {
+    display: flex;
+    width: 100%;
+    height: 30px;
+    justify-content: center;
+    color: $black;
+    text-align: center;
+    font-size: $large-size;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 55px;
+}
+.profile-settings-data {
+    width: 800px;
+    height: 26px;
+    margin-left: 50px;
+    border-bottom: 1px solid $purple;
+    font-size: $medium-size;
+    font-style: normal;
+    line-height: normal;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.profile-settings-data-header {
+    width: 120px;
+    height: 25px;
+    color: $black;
+    font-weight: 700;
+}
+.profile-settings-data-profile {
+    width: 250px;
+    height: 25px;
+    color: $grey;
+    text-align: right;
+    font-weight: 400;
+}
+.profile-setting-btn {
+    width: 360px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: $purple;
+    color: $white;
+    text-align: center;
+    font-size: $medium-size;
+    margin-top: 50px;
+    border: 1px solid $purple;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 270px;
+}

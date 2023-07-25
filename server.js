@@ -1,29 +1,15 @@
-const express = require ('express');
+const express = require('express');
+const path = require('path');
+
 const app = express();
 const PORT = 3000;
-app.use(express.static('./'));
-app.listen(PORT, function (){
-    console.log('Example app listening on port ${PORT}!');
+app.set("view engine", "handlebars");
+
+app.use(express.static('./dist'));
+app.use('/*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
-
-
-// const express = require('express');
-// const app = express();
-// // const expbs = require('MIDDLE.MESSENGER.PRAKTIKUM.YANDEX')
-
-// const PORT = 3000;
-
-// app.use(express.static('./'));
-
-// // app.engine('handlebars', expbs());
-// app.set("view engine", "handlebars");
-
-// //routing
-// // app.get('/', (req, res) => {
-// //   res.render('index');
-// // });
-
-// app.listen(PORT, function () {
-//   console.log(`Server is starting at port ${PORT}!`);
-// }); 
+app.listen(PORT, function () {
+  console.log(`Server is starting at port ${PORT}!`);
+}); 
