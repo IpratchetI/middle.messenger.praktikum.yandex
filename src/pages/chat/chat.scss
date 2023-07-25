@@ -1,51 +1,169 @@
-.chat-profile-icon {
-    width: 25px;
-    height: 25px;   
-}
-.chat-form {
-    background: $white;
+.chat-main-form {
     display: flex;
     font-family: Roboto Flex;
+}
 
-    &__left-menu {
-        width: 500px;
-        height: 100%;
-        border-right: 3px solid $purple;
-    }
-    &__profile {
-        display: flex;
-        width: 90%;
-        height: 25px;
-        flex-direction: column;
-        font-size: $large-size;
-        text-align: end;
-        color: $grey;
-        margin-top: 30px;
-        cursor: pointer;
-    }
-    &__search-form {
-        width: 100%;
-        margin-top: 25px;
-        align-items: center;
+.left-chat-part {
+    border-right: 1px solid $purple;
+    max-width: 500px;
+    height: 100%;
+    // display: block;
+}
+.chat-pfofile-btn {
+    width: 104px;
+    height: 25px;
+    background: none;
+    border: none;
+    color: $black;
+    font-size: $medium-size;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 30px;
+    margin-left: 380px;
+    text-align: center;
+    cursor: pointer;
+}
 
-    }
-    &__search {
-        display: block;
-        width: 400px;
-        height: 40px;
-        text-align: center;
-        margin-left: 50px;
-        border-radius: 5px;
-        border: 1px solid $purple;
-        background: $white;
-        cursor: pointer;
-    }
-    &__contacts {
-        width: 100%;
-    }
-    &__contact-form {
-        width: 100%;
-    }
-    &__avatar {
-    }
+.chat-search-input{
+    // display: block;
+    width: 400px;
+    height: 40px;
+    text-align: center;
+    margin-left: 50px;
+    border-radius: 5px;
+    border: 1px solid $purple;
+    background: $white;
+    cursor: pointer;
+    margin-bottom: 10px;
+    margin-top: 25px;
+}
+
+.chat-contact-form {
+    // width: 500px;
+    height: 90px;
+    // border: 2px solid $purple;
+    font-family: Roboto Flex;
+    display: flex;
+}
+
+.chat-avatar {
+    width: 70px;
+    height: 70px;
+    border: 2px solid $purple;
+    border-radius: 100%;
+    margin-top: 10px;
+    margin-left: 10px;
+    background-image: url(/src/styles/icons/avatar.png);
+}
+.chat-contact-block {
+    display: flex;
+    flex-direction: column;
+    width: 420px;
+}
+.contact-profile-name {
+    color: $black;
+    font-size: $medium-size;
+    font-style: normal;
+    font-weight: 700;
+    width: 390px;
+    height: 35px;
+    text-align: left;
+    vertical-align: middle;
+    line-height: 35px;
+    // border: 2px solid $purple;
+    display: flex;
+    justify-content: space-between; 
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.contact-message-date {
+    // border: 2px solid $purple;
+    color: $grey;
+    font-size: $extra-small;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    width: 50px;
+    text-align: end;
+    margin-top: 10px;
+}
+.chat-contact-message {
+    // border: 2px solid $purple;
+    width: 390px;
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.message-from {
+    color: $black;
+    justify-content: left !important;
+    width: 75px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; 
+    margin-top: 10px;
+}
+.message-text {
+    width: 300px;
+    color: $grey;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; 
+    margin-top: 10px;
+}
+
+.message-counter {
+    background-color: $purple;
+    color: $white;
+    border-radius: 100%;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 25px;
+    margin-top: 10px;
+}
+.message-counter-alt {
+    background-color: $white;
+    color: $white;
+    border-radius: 100%;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 25px;
+}
+
+.right-chat-part {
+    height: 50px;
+    width: 100%;
+    background-color: $purple-light;
+    display: flex;
+    // justify-content: space-around;
+}
+.contact-message-display-name {
+    display: flex;
+    width: 300px;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    color: $black;
+    font-size: $medium-size;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    float: left;
+    margin-left: 20px;
+}
+.chat-add-contact-menu {
+    width: 50px;
+    height: 100%;
+    float: right;
+    display: flex;
+    justify-content: flex-end;
+    background: url(/middle.messenger.praktikum.yandex/src/styles/icons/options-icon.png), lightgray 50% / cover no-repeat;
+
 }

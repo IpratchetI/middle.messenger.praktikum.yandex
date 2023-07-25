@@ -1,40 +1,51 @@
-<div class="chat-form">
-    <div class="chat-form__left-menu">
-        <div class="chat-form__profile">
-            {{ profile }}
-            <div class="chat-profile-icon" src="/middle.messenger.praktikum.yandex/src/styles/icons/arrow-back.svg"></div>
+<div class="chat-main-form">
+    <div class="left-chat-part">
+        <div>
+            <button class="chat-pfofile-btn">
+                {{ profile }}
+                <img src="/middle.messenger.praktikum.yandex/src/styles/icons/arrow-back.svg">
+            </button>
         </div>
-        <div class="chat-form__search-form">
-            <input class="chat-form__search" type='text' placeholder="поиск">
+        <div>
+            <input class="chat-search-input" placeholder="поиск">
         </div>
-        <div class="chat-form__contacts">
-            <div class="chat-form__contact-form">Contact1
-                <img src="/middle.messenger.praktikum.yandex/src/styles/icons/avatar-border.svg">
-                {{!-- <div class="chat-form__avatar" src="/middle.messenger.praktikum.yandex/src/styles/icons/avatar-border.svg">AVATAR</div> --}}
-                <div>
-                    <div>NAME</div>
-                    <div>LAST MESSAGE</div>
+        <div class="chat-contact-form">
+            <div class="chat-avatar"></div>
+            <div class="chat-contact-block">
+                <div class="contact-profile-name">
+                    {{displayName}}
+                    <div class="contact-message-date">
+                        {{messageDate}}
+                    </div>
                 </div>
-                <div>timeDATE</div>
-            </div>
+                <div class="chat-contact-message">
+                    <div class="message-from">{{displayNameAlt}}:</div>
+                    <div class="message-text">{{chatMessagePic}}</div>
+                    <div class="message-counter">{{messageCounter}}</div>
+                </div>
+            </div> 
+        </div>
+        <div class="chat-contact-form">
+            <div class="chat-avatar"></div>
+            <div class="chat-contact-block">
+                <div class="contact-profile-name">
+                    {{displayNameAlt}}
+                    <div class="contact-message-date">
+                        {{messageTime}}
+                    </div>
+                </div>
+                <div class="chat-contact-message">
+                    <div class="message-from">{{displayName}}:</div>
+                    <div class="message-text">{{chatMessageLarge}}</div>
+                    <div class="message-counter-alt"></div>
+                </div>
+            </div> 
         </div>
     </div>
-    <div class="chat-form__contact-menu">
-        <div>
-            <div class="chat-form__checked-contact">vasily</div>
-            <button class="chat-form__contact-add-delete"></button>
-        </div>
-        <div class="chat-form__messages">
-            <div class="chat-form__message-form">
-                <div>date</div>
-                <div>text</div>
-                <div>picture</div>
-            </div>
-        </div>
-        <div class="create-message">
-            <div class="create-message__add-file"></div>
-            <div class="create-message__message-text-field"></div>
-            <button class="create-message__send-message">ICON</button>
-        </div>
+    <div class="right-chat-part">
+        <div class="contact-message-display-name">{{displayName}}</div>
+        <div class="chat-add-contact-menu">CLick</div>
     </div>
 </div>
+
+
