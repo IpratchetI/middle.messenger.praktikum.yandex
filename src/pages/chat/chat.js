@@ -7,8 +7,6 @@ import imgAddFileIco from '../../styles/icons/add-file.svg';
 import imgSendMessageIco from '../../styles/icons/send-arrow.svg';
 
 
-// const text = `<img src="${img}">`;
-
 export const chat = ({ }) => {
   return chatTemplate({
     sendArrowIco: imgSendMessageIco,
