@@ -2,8 +2,8 @@
     <div class="left-chat-part">
         <div class="chat-profile-form">
             <button class="chat-pfofile-btn" data-destination="/userOpt">
-                {{ profile }}
-                <img src="../../styles/icons/arrow-right.svg">
+                {{profile}}
+                <img src="{{arrowRight}}">
             </button>
         </div>
         <div>
@@ -11,7 +11,7 @@
         </div>
         <div class="chat-contact-form__selected">
             <div class="chat-avatar">
-                <img class="chat-avatar-ico" src="../../styles/icons/Avatar.png">
+                <img class="chat-avatar-ico" src="{{avatar}}">
             </div>
             <div class="chat-contact-block">
                 <div class="contact-profile-name">
@@ -29,7 +29,7 @@
         </div>
         <div class="chat-contact-form">
             <div class="chat-avatar">
-                <img class="chat-avatar-ico" src="../../styles/icons/Avatar.png">
+                <img class="chat-avatar-ico" src="{{avatar}}">
             </div>
             <div class="chat-contact-block">
                 <div class="contact-profile-name">
@@ -50,21 +50,21 @@
         <div class="right-chat-part-header">
             <div class="contact-message-display-name">{{displayName}}</div>
             <button class="chat-add-contact-menu">
-                <img class="chat-options-ico" src="../../styles/icons/options-icon.png">
+                <img class="chat-options-ico" src="{{options}}">
             </button>
         </div>
         <div class="right-chat-message-content">
             <div class="right-chat-message-content__date-message">{{messageTime}}</div>
-            <img class="chat-message-picture" src="../../styles/icons/Igdrasil.png">
+            <img class="chat-message-picture" src="{{messagePic}}">
             <div class="right-chat-message-text">Как вы могли заметить, все свойства имеют префикс с символом $, который отличает их от других свойств, а также позволяет избежать конфликтов имен. Ниже приведено описание всех свойств и вариантов их использования:t</div>
         </div>
         <div class="bottom-right-chat-part">
             <button class="send-file">
-                <img src="../../styles/icons/add-file.svg">
+                <img src="{{addFile}}">
             </button>
             <input class="bottom-right-chat-part__input-message" placeholder="Введите сообщение">
             <button class="send-message">
-                <img src="../../styles/icons/send-arrow.svg">
+                <img src="{{sendArrowIco}}">
             </button>
         </div>
     </div>

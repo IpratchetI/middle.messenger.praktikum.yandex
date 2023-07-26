@@ -1,8 +1,22 @@
 import chatTemplate from './chat.hbs';
-// import img from '/Users/alexandrtsarkov/Documents/Praktikum/YandexProject/middle.messenger.praktikum.yandex/middle.messenger.praktikum.yandex/src/styles/icons/arrow-back.svg';
+import imgArrowRight from '../../styles/icons/arrowRight.svg';
+import imgAvatar from '../../styles/icons/avatar-icon.png';
+import imgOptionsIco from '../../styles/icons/options-icon.png';
+import imgmessagePic from '../../styles/icons/igdrasil.png';
+import imgAddFileIco from '../../styles/icons/add-file.svg';
+import imgSendMessageIco from '../../styles/icons/send-arrow.svg';
+
+
+// const text = `<img src="${img}">`;
 
 export const chat = ({ }) => {
   return chatTemplate({
+    sendArrowIco: imgSendMessageIco,
+    addFile: imgAddFileIco,
+    messagePic: imgmessagePic,
+    options: imgOptionsIco,
+    avatar: imgAvatar,
+    arrowRight: imgArrowRight,
     profile: 'Профиль',
     search: 'Поиск',
     displayName: 'Семен Петров',
