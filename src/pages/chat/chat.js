@@ -1,4 +1,5 @@
 import chatTemplate from './chat.hbs';
+// import img from '/Users/alexandrtsarkov/Documents/Praktikum/YandexProject/middle.messenger.praktikum.yandex/middle.messenger.praktikum.yandex/src/styles/icons/arrow-back.svg';
 
 export const chat = ({ }) => {
   return chatTemplate({
