@@ -1,7 +1,9 @@
 import userOptTemplate from './userOptions.hbs';
+import optionsAvatar from '../../styles/icons/avatar-icon.png';
 
 export const userOpt = ({ second_name, display_name, email, phone }) => {
   return userOptTemplate({
+    avatarIco: optionsAvatar,
     display_name: 'Pratchet',
     userEmail: 'Почта',
     email: 'pochta@yandex.ru',
