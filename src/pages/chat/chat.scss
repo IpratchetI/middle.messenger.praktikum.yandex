@@ -17,8 +17,14 @@
     height: 100%;
     // display: block;
 }
+.chat-profile-form {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 30px;
+    padding-right: 30px;
+}
 .chat-pfofile-btn {
-    width: 104px;
+    width: 75px;
     height: 25px;
     background: none;
     border: none;
@@ -27,11 +33,12 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin-top: 30px;
-    margin-left: 380px;
     text-align: center;
     cursor: pointer;
+    display: flex;
+    align-items: center;
 }
+
 
 .chat-search-input{
     // display: block;
@@ -71,6 +78,10 @@
     margin-top: 10px;
     margin-left: 10px;
     background-image: url(/src/styles/icons/avatar.png);
+}
+.chat-avatar-ico {
+    width: 70px;
+    height: 70px;
 }
 .chat-contact-block {
     display: flex;
@@ -187,11 +198,19 @@
     width: 40px;
     height: 40px;
     float: right;
-    border: 2px solid $purple;
+    border: none;
     margin: 5px 5px 5px 5px;
     border-radius: 100%;
     text-align: center;
-    background-color: $purple;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.chat-options-ico {
+    width: 40px;
+    height: 40px;
 }
 .right-chat-message-content {
     // display: flex;
@@ -201,6 +220,7 @@
     // align-items: center;
     // position: absolute;
     margin-top: 60px;
+    margin-left: 10px;
 
     &__date-message {
         height: 34px;
@@ -216,6 +236,10 @@
         // justify-content: center;
     }
 }
+.chat-message-picture {
+    width: 50%;
+    height: 40%;
+}
 .right-chat-message-text {
     color: $black;
     font-size: $medium-size;
@@ -229,6 +253,7 @@
     border: 2px solid $purple-light;
     border-radius: 15px;
     padding: 5px;
+    margin-top: 10px;
     
 
 }
@@ -241,13 +266,6 @@
     width: 100%;
     background-color: $purple-light;
 
-    &__send-file {
-        width: 30px;
-        height: 30px;
-        margin-left: 20px;
-        margin-bottom: 30px;
-    }
-
     &__input-message {
         width: 100%;
         height: 40px;
@@ -258,15 +276,41 @@
         color: $grey;
         font-size: $medium-size;
         padding-left: 10px;
+        cursor: pointer;
     }
 
-    &__send-message {
-        border: 1px solid $purple;
-        border-radius: 100%;
-        // margin-left: 40px;
-        background-color: $purple;
-        margin: 10px 20px 10px 40px;
-        width: 55px;
-        height: 40px;
-    }
+    // &__send-message {
+    //     border: 1px solid $purple;
+    //     border-radius: 100%;
+    //     // margin-left: 40px;
+    //     background-color: $purple;
+    //     margin: 10px 20px 10px 40px;
+    //     width: 55px;
+    //     height: 40px;
+    // }
+}
+
+.send-file {
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+    // margin-bottom: 30px;
+    background-color: transparent;
+    border: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.send-message {
+    // margin-left: 40px;
+    margin: 10px 20px 10px 40px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
 }
