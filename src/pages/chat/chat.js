@@ -2,7 +2,7 @@ import chatTemplate from './chat.hbs';
 import imgArrowRight from '../../styles/icons/arrowRight.svg';
 import imgAvatar from '../../styles/icons/avatar-icon.png';
 import imgOptionsIco from '../../styles/icons/options-icon.png';
-import imgmessagePic from '../../styles/icons/igdrasil.png';
+import imgmessagePic from '../../styles/icons/message-pictute.png';
 import imgAddFileIco from '../../styles/icons/add-file.svg';
 import imgSendMessageIco from '../../styles/icons/send-arrow.svg';
 
@@ -15,7 +15,7 @@ export const chat = ({ }) => {
     addFile: imgAddFileIco,
     messagePic: imgmessagePic,
     options: imgOptionsIco,
-    avatar: imgAvatar,
+    avatarPic: imgAvatar,
     arrowRight: imgArrowRight,
     profile: 'Профиль',
     search: 'Поиск',
