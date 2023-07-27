@@ -1,17 +1,13 @@
-<div class="form">
-    <div class="main-form">
+<main class="main-form">
+    <form>
         <div class="main-form__header">
             {{headerLogin}}
         </div>
-        <div class="main-form__input-header">
-            {{inputLogin}}
-        </div>
-        <input id="inputLogin" class="main-form__input-field" type='text' placeholder="введите логин">
-        <div class="main-form__input-header">
-            Пароль
-        </div>
-        <input id="inputPassword" class="main-form__input-field" type="password" placeholder="введите пароль">
-        <button class="main-form__btn" data-destination="/chat">Авторизация</button>
-        <button class="main-form__registerUrl" data-destination="/register">нет аккаунта?</button>
-    </div>
-</div>
+        <label for="login" class="main-form__input-header">{{inputLogin}}</label>
+        <input name="login" class="main-form__input-field" type='text' placeholder="введите логин">
+        <label for="password" class="main-form__input-header">{{inputPassword}}</label>
+        <input name="password" class="main-form__input-field" type="password" placeholder="введите пароль">
+        <button class="main-form__btn" data-destination="/chat">{{buttonEnter}}</button>
+    </form>
+    <button class="main-form__registerUrl" data-destination="/register">{{newAccaunt}}</button>
+</main>

@@ -17,5 +17,6 @@ export const userOpt = ({ second_name, display_name, email, phone }) => {
     phoneNumber: 'Телефон',
     phone: '+7(903)-333-33-33', 
     saveProfile: 'Сохранить',
+    changePassword: 'Изменить пароль',
   });
 };

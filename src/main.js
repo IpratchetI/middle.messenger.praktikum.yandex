@@ -90,19 +90,6 @@ const handleButtonClick = (event) => {
     }
   };
 
-// const handleButtonClick = (event) => {
-//   const target = event.target;
-
-//   if (target.tagName === 'BUTTON') {
-//     const destination = target.getAttribute('data-destination');
-//     if (destination) {
-//       window.history.pushState(null, null, destination);
-//       handleRoute();
-//       event.preventDefault();
-//     }
-//   }
-// };
-
 document.addEventListener('click', handleButtonClick);
 
 window.addEventListener('popstate', handleRoute);
