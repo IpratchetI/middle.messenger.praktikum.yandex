@@ -31,10 +31,14 @@ body {
         height: 40px;
         text-align: center;
         font-weight: 700;
-        margin-left: 70px;
-        margin-top: 75px;
-        padding-bottom: 68px;
+        margin-left: 35px;
+        margin-top: 50px;
+        padding-bottom: 30px;
     };
+}
+.list-element {
+    display: flex;
+    justify-content: center;
 }
 .button {
     display: flex;
@@ -46,14 +50,15 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin-top: 20px;
+    margin-top: 10px;
     text-align: center;
-    margin-left: 70px;
+    // margin-left: 70px;
     background-color: $purple;
     border: 2px solid $purple-light;
-    border-radius: 10px;
+    border-radius: 20px;
     align-items: center;
     cursor: pointer;
+    justify-content: center;
 };
 
 .button:hover {

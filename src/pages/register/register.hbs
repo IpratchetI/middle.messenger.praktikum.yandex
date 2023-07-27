@@ -1,43 +1,22 @@
-<div class="form">
-    <div class="register-form">
+<main>
+    <form class="register-form">
         <div class="register-form__header">
             {{headerRegister}}
         </div>
-        <div class="register-form__input-header">
-            {{inputMail}}
-        </div>
-        <input class="register-form__input-field" type='text' placeholder="введите почту">
-
-        <div class="register-form__input-header">
-            {{inputLogin}}
-        </div>
-        <input class="register-form__input-field" type='text' placeholder="введите логин">
-
-        <div class="register-form__input-header">
-            {{inputFirstName}}
-        </div>
-        <input class="register-form__input-field" type='text' placeholder="введите имя">
-
-        <div class="register-form__input-header">
-            {{inputSecondName}}
-        </div>
-        <input class="register-form__input-field" type='text' placeholder="введите фамилию">
-
-        <div class="register-form__input-header">
-            {{inputPhone}}
-        </div>
-        <input class="register-form__input-field" type='text' placeholder="введите телефон">
-
-        <div class="register-form__input-header">
-            {{inputPassword}}
-        </div>
-        <input class="register-form__input-field" type='password' placeholder="введите пароль">
-
-        <div class="register-form__input-header">
-            {{inputPasswordRepeat}}
-        </div>
-        <input class="register-form__input-field" type='password' placeholder="введите пароль(ещё раз)">
-
-        <button class="register-form__btn" data-destination="/login">Регистрация</button>
-    </div>
-</div>
+        <label for="email" class="register-form__input-header">{{inputMail}}</label>
+        <input name="email" class="register-form__input-field" type='text' placeholder="введите почту">
+        <label for="login" class="register-form__input-header">{{inputLogin}}</label>
+        <input name="login" class="register-form__input-field" type='text' placeholder="введите логин">
+        <label for="first_name" class="register-form__input-header">{{inputFirstName}}</label>
+        <input name="first_name" class="register-form__input-field" type='text' placeholder="введите имя">
+        <label for="second_name" class="register-form__input-header">{{inputSecondName}}</label>
+        <input name="second_name" class="register-form__input-field" type='text' placeholder="введите фамилию">
+        <label for="phone" class="register-form__input-header">{{inputPhone}}</label>
+        <input name="phone" class="register-form__input-field" type='text' placeholder="введите телефон">
+        <label for="password" class="register-form__input-header">{{inputPassword}}</label>
+        <input name="password" class="register-form__input-field" type='password' placeholder="введите пароль">
+        <label for="password" class="register-form__input-header">{{inputPasswordRepeat}}</label>
+        <input name="password" class="register-form__input-field" type='password' placeholder="введите пароль(ещё раз)">
+        <button class="register-form__btn" data-destination="/login">{{registerButton}}</button>
+    </form>
+</main>

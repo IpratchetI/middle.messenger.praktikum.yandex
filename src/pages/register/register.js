@@ -10,5 +10,6 @@ export const register = ({ headerLogin, inputLogin }) => {
     inputPhone: 'Телефон',
     inputPassword: 'Пароль',
     inputPasswordRepeat: 'Повторите пароль',
+    registerButton: 'Регистрация'
   });
 };

@@ -63,6 +63,12 @@
     color: $grey;
     text-align: right;
     font-weight: 400;
+    border: transparent;
+    background-color: transparent;
+    cursor: pointer;
+}
+.profile-settings-data-profile:focus {
+    outline: none;
 }
 .profile-setting-btn {
     width: 360px;
