@@ -1,0 +1,75 @@
+<main>
+    <div class="chat-main-form">
+        <div class="left-chat-part">
+            <div class="chat-profile-form">
+                <button class="chat-pfofile-btn" data-destination="/userOpt">
+                    {{profile}}
+                    <img alt="arrowRight" src="{{arrowRight}}">
+                </button>
+            </div>
+            <form>
+                <input class="chat-search-input" placeholder="поиск">
+            </form>
+            <div class="chat-contact-form__selected">
+                <div class="chat-avatar">
+                    <img class="chat-avatar-ico" alt="avatarPic" src="{{avatarPic}}">
+                </div>
+                <div class="chat-contact-block">
+                    <div class="contact-profile-name">
+                        {{displayName}}
+                        <div class="contact-message-date">
+                            {{messageDate}}
+                        </div>
+                    </div>
+                    <div class="chat-contact-message">
+                        <div class="message-from">{{displayNameAlt}}:</div>
+                        <div class="message-text">{{chatMessagePic}}</div>
+                        <div class="message-counter">{{messageCounter}}</div>
+                    </div>
+                </div> 
+            </div>
+            <div class="chat-contact-form">
+                <div class="chat-avatar">
+                    <img class="chat-avatar-ico" alt="avatarPic" src="{{avatarPic}}">
+                </div>
+                <div class="chat-contact-block">
+                    <div class="contact-profile-name">
+                        {{displayNameAlt}}
+                        <div class="contact-message-date">
+                            {{messageTime}}
+                        </div>
+                    </div>
+                    <div class="chat-contact-message">
+                        <div class="message-from">{{displayName}}:</div>
+                        <div class="message-text">{{chatMessageLarge}}</div>
+                        <div class="message-counter-alt"></div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        <div class="right-chat-part">
+            <div class="right-chat-part-header">
+                <div class="contact-message-display-name">{{displayName}}</div>
+                <button class="chat-add-contact-menu">
+                    <img class="chat-options-ico" alt="options" src="{{options}}">
+                </button>
+            </div>
+            <div class="right-chat-message-content">
+                <div class="right-chat-message-content__date-message">{{messageTime}}</div>
+                <img class="chat-message-picture" alt="messagePic" src="{{messagePic}}">
+                <div class="right-chat-message-text">Как вы могли заметить, все свойства имеют префикс с символом $, который отличает их от других свойств, а также позволяет избежать конфликтов имен. Ниже приведено описание всех свойств и вариантов их использования:t</div>
+            </div>
+            <form class="bottom-right-chat-part">
+                <button class="send-file">
+                    <img alt="addFile" src="{{addFile}}">
+                </button>
+                <input name="message" class="bottom-right-chat-part__input-message" placeholder="Введите сообщение">
+                <button class="send-message">
+                    <img alt="sendArrowIco" src="{{sendArrowIco}}">
+                </button>
+            </form>
+        </div>
+    </div>
+</main>
+
+

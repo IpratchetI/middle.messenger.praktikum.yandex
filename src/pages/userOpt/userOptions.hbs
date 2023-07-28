@@ -1,0 +1,34 @@
+<main>
+    <form class="profile-settings">
+        <div name="avatar" class="profile-setting-avatar">
+        <img alt="avatarIco" class="profile-settings-avatar-ico" src="{{avatarIco}}">
+        </div>
+        <div class="profile-settings-name">{{display_name}}</div>
+        <div class="profile-settings-data">
+            <label for="email" class="profile-settings-data-header">{{userEmail}}</label>
+            <input name="email" class="profile-settings-data-profile" placeholder="{{email}}">
+        </div>
+        <div class="profile-settings-data">
+            <label for="login" class="profile-settings-data-header">{{login}}</label>
+            <input name="login" class="profile-settings-data-profile" placeholder="{{myLogin}}">
+        </div>
+        <div class="profile-settings-data">
+            <label for="first_name" class="profile-settings-data-header">{{firstName}}</label>
+            <input name="first_name" class="profile-settings-data-profile" placeholder="{{first_name}}">
+        </div>
+        <div class="profile-settings-data">
+            <label for="second_name" class="profile-settings-data-header">{{secondName}}</label>
+            <input name="second_name" class="profile-settings-data-profile" placeholder="{{second_name}}">
+        </div>
+        <div class="profile-settings-data">
+            <label for="display_name" class="profile-settings-data-header">{{displayName}}</label>
+            <input name="display_name" class="profile-settings-data-profile" placeholder="{{display_name}}">
+        </div>
+        <div class="profile-settings-data">
+            <label for="phone" class="profile-settings-data-header">{{phoneNumber}}</label>
+            <input name="phone" class="profile-settings-data-profile" placeholder="{{phone}}">
+        </div>
+        <button class="profile-setting-btn" data-destination="/changePassword">{{changePassword}}</button>
+        <button class="profile-setting-btn" data-destination="/chat">{{saveProfile}}</button>
+    </form>
+</main>

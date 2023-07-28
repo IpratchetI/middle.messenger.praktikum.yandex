@@ -1,0 +1,13 @@
+<main class="main-form">
+    <form>
+        <div class="main-form__header">
+            {{headerLogin}}
+        </div>
+        <label for="login" class="main-form__input-header">{{inputLogin}}</label>
+        <input name="login" class="main-form__input-field" type='text' placeholder="введите логин">
+        <label for="password" class="main-form__input-header">{{inputPassword}}</label>
+        <input name="password" class="main-form__input-field" type="password" placeholder="введите пароль">
+        <button class="main-form__btn" data-destination="/chat">{{buttonEnter}}</button>
+    </form>
+    <button class="main-form__registerUrl" data-destination="/register">{{newAccaunt}}</button>
+</main>
