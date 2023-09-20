@@ -1,0 +1,56 @@
+@use "../../styles/_variables.scss" as vars;
+
+.input {
+    font-size: 13px;
+    line-height: 13px;
+    font-family: Inter, sans-serif;
+    padding: 7px 0;
+    width: 100%;
+    background-color: transparent;
+    box-shadow: vars.$form-shadow;
+
+    &:hover {
+        border-top: vars.$input-boder-hover-color solid 1px;
+        border-right: vars.$input-boder-hover-color solid 1px;
+    }
+
+    &:focus {
+        border-color: vars.$input-border-focus-color;
+    }
+
+    &__label {
+        color: vars.$base-text-color;
+        font-size: 9px;
+        line-height: 9px;
+    }
+
+    &__container {
+        width: 100%;
+    }
+
+    &__container:not(:last-child) {
+        margin-bottom: 16px;
+    }
+
+    &__error {
+        color: vars.$error-color-font;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 10px;
+
+        &--active {
+            margin-top: 7px;
+        }
+    }
+
+    &--error {
+        border: 1px solid vars.$input-border-error-color;
+        &:hover {
+            border: 1px solid vars.$input-border-error-color;
+        }
+        &:focus {
+            border-color: vars.$input-border-error-focus-color;
+        }
+        
+    }
+}
