@@ -1,0 +1,52 @@
+@use "./fonts/fonts";
+@use "variables" as vars;
+
+body {
+    margin: 0;
+    font-family: vars.$base-font;
+    font-weight: 500;
+    min-height: 100vh;
+    color: vars.$font-color-default;
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    border: none;
+}
+
+input {
+    border-radius: 10px;
+    border: 1px solid vars.$input-border-base-color;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid vars.$input-border-focus-color;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1280px;
+}
+
+.flex {
+    display: flex;
+}

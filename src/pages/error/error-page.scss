@@ -1,0 +1,31 @@
+@use "../../styles/_variables.scss" as vars;
+
+.error {
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    &__text-container {
+        width: 300px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        .error {
+            &__title {
+                font-size: vars.$typography-font-large-50;
+                line-height: 50px;
+                margin-bottom: 20px;
+            }
+
+            &__description {
+                font-size: vars.$typography-font-medium-20;
+                line-height: 20px;
+                margin-bottom: 70px;
+            }
+        }
+    }
+}
