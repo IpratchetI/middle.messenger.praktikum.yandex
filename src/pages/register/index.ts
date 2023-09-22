@@ -86,6 +86,8 @@ export class RegistrationPage extends Block {
                 window.location.href = "/";
                 this.removeEvents();
             }
+            console.log(1111111)
+            console.log(form);
         }
     }
 

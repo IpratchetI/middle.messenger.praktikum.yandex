@@ -1,4 +1,4 @@
-import defaultImage from "../assets/Default-image.png";
+import defaultImage from "../assets/default-image.png";
 
 export type Chat = {
     name: string;

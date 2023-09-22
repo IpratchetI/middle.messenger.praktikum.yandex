@@ -12,13 +12,20 @@
     "lint": "npx eslint \"**/*.ts\""
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.7.2",
+    "@typescript-eslint/parser": "^6.7.2",
+    "eslint": "^8.49.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-react": "^7.33.2",
+    "stylelint": "^15.10.3",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
   },
   "dependencies": {
-    "eslint": "^8.49.0",
     "handlebars": "^4.7.8",
     "nanoid": "^5.0.1",
-    "sass": "^1.67.0"
+    "react": "^18.2.0",
+    "sass": "^1.67.0",
+    "stylelint-scss": "^5.2.1"
   }
 }

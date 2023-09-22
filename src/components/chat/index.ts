@@ -79,9 +79,10 @@ export class ChatComponent extends Block<ChatProps> {
             this.handleValidateForm();
 
             if (this.isChatFormValid()) {
-                // Нужно сбрасывать значение в инпуте, посмотреть как сделать ref.
-                console.log("Успех");
+                console.log("succes");
             }
+            console.log(1111111)
+            console.log(form);
         }
     }
 

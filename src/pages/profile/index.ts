@@ -158,6 +158,8 @@ export class ProfilePage extends Block<ProfileProps> {
                 window.location.href = "/profile";
                 this.removeEvents();
             }
+            console.log(1111111)
+            console.log(form);
         }
     }
 
