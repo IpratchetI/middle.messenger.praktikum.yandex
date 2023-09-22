@@ -7,6 +7,7 @@ npm run start - сборка и запуск сервера
 npm run dev - запуск dev сервера
 node_modules/.bin/eslint .  /запуск тестов esLint
 node_modules/.bin/eslint . --fix   /запуск правок esLint
+npm run stylelint **/*.scss  /запуск линтинга
 
 http://localhost:3000/login - Страница авторизации
 http://localhost:3000/register - Страница регистрации

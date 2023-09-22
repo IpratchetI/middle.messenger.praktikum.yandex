@@ -3,9 +3,9 @@
 
 //base colors *!нужно реструктурировать по типу объект-тип-вариант
 $button-main-color: $purple-dark;
-$button-hover-color:$purple;
-$base-hover-color:$purple;
-$base-border-color:$purple-dark;
+$button-hover-color: $purple;
+$base-hover-color: $purple;
+$base-border-color: $purple-dark;
 $form-shadow: $base-shadow;
 $base-background-message-color: $grey-light;
 $base-background-color: $white;
@@ -15,7 +15,6 @@ $base-color-purple: $purple-dark;
 $base-color-purple-light: $purple-light;
 $base-color-red: $red;
 $base-color-transparent: $transparent-default;
-
 
 //border
 $input-border-base-color: $purple;
@@ -65,7 +64,8 @@ $background-alt-hover: $purple-light;
 $background-chat-message: $purple-extra-light;
 $background-chat-message-alt: $purple-extra-light-alt;
 $background-message-grey: $grey-light-transparent;
+
 // $background-contact-color: $purple-extra-light-alt;
 
 //main font family
-$base-font: Roboto Flex, Inter, sans-serif;
+$base-font: roboto flex, inter, sans-serif;
