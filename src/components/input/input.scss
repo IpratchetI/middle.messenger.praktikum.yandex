@@ -46,9 +46,11 @@
 
     &--error {
         border: 1px solid vars.$input-border-error-color;
+
         &:hover {
             border: 1px solid vars.$input-border-error-color;
         }
+
         &:focus {
             border-color: vars.$input-border-error-focus-color;
         }
