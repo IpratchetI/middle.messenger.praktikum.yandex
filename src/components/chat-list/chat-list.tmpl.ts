@@ -1,8 +1,8 @@
 import Handlebars from "handlebars";
 
-import arrow from "../../assets/icons/arrow.svg";
+import arrow from "../../assets/icons/arrow-forward.svg";
 import { converChatsListsDate } from "../../utils/utils.ts";
-// import "./chat-list.scss";
+import "./chat-list.scss";
 
 Handlebars.registerHelper("lastMessage", (array) => {
     if (array && array.length > 0) {
@@ -21,7 +21,7 @@ Handlebars.registerHelper("lastItemDate", (array) => {
 Handlebars.registerHelper("ifIdEquals", (id, opts) => {
     const activeId = window.location.pathname.slice(1);
     if (activeId === id) {
-        return opts.fn("background-color: #FCE8E5");
+        return opts.fn("background-color: #5a04a533");
     }
     return opts.inverse({});
 });

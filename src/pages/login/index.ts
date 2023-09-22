@@ -31,7 +31,7 @@ export class LoginPage extends Block {
         this.children.form = new FormComponent({
             inputs,
             events: formEvents,
-            link: new LinkComponent({ text: "Нет аккаунта?", url: "/register" }),
+            link: new LinkComponent({ text: "Нет аккаунта", url: "/register" }),
             title: "Вход",
             button: new ButtonComponent({ text: "Войти", type: "submit" }),
         });

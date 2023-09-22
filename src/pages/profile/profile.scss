@@ -64,7 +64,7 @@
         width: 100%;
         box-shadow: none;
         border-radius: none;
-        padding: 0;
+        padding: 15px;
     }
 
     &__button--hidden {
@@ -73,7 +73,6 @@
 
     &__link {
         padding: 10px 0;
-        // border-bottom: vars.$gray-color-light 1px solid;
 
         &--exit {
             color: #f00;

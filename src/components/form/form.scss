@@ -10,6 +10,7 @@
     box-shadow: vars.$form-shadow;
     border-radius: 12px;
     padding: 50px 30px 30px;
+    background-color: vars.$base-background-color;
 
     &__title {
         font-size: 20px;

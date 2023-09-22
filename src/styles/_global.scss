@@ -1,13 +1,14 @@
+@use "./fonts/fonts";
 @use "variables" as vars;
 
 body {
     margin: 0;
-    font-family: Inter, sans-serif;
+    font-family: vars.$base-font;
     font-weight: 500;
     min-height: 100vh;
-    color: vars.$base-text-color;
-    font-family: Rob;
+    color: vars.$font-color-default;
 }
+
 
 *,
 *::before,

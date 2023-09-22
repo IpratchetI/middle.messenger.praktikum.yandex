@@ -1,4 +1,4 @@
-const EMPTY_MESSAGE = "Обязательное поле";
+const EMPTY_MESSAGE = "Обязательно поле";
 const MIN_VALUE_MESSAGE = (minValue: number): string => {
     return `Значение должно быть больше ${minValue}`;
 };

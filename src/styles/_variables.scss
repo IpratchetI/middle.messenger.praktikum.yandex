@@ -1,20 +1,20 @@
 @import "colors";
-//base
-$base-text-color: $black;
+@import "./fonts/sizes";
+
+//base colors *!нужно реструктурировать по типу объект-тип-вариант
 $button-main-color: $purple-dark;
 $button-hover-color:$purple;
 $base-hover-color:$purple;
-$base-text-color-alt: $purple-dark;
 $base-border-color:$purple-dark;
 $form-shadow: $base-shadow;
-// $gray-color: rgb(153 153 153 / 100%);
-// $gray-color-light: #eaeaea;
-// $gray-color-medium: #efefef;
-// $primary-color: red;
-// $primary-color-hover: rgb(219 112 147 / 75%);
-// $primary-color-pale: rgb(252 232 229 / 50.2%);
-// $primary-color-selected: #fce8e5;
-$error-color-font: $red;
+$base-background-message-color: $grey-light;
+$base-background-color: $white;
+
+//base-color
+$base-color-purple: $purple-dark;
+$base-color-purple-light: $purple-light;
+$base-color-red: $red;
+$base-color-transparent: $transparent-default;
 
 
 //border
@@ -24,18 +24,48 @@ $input-border-error-hover-color: $red-dark;
 $input-border-error-focus-color: $red-light;
 $input-border-focus-color: $purple-light;
 $input-boder-hover-color: $purple-light;
-// $white: rgba(255, 255, 255, 1);
-// $black: rgba(9, 5, 23, 1);
-// // $purple: rgba(86, 3, 173, 1);
-// $grey: rgba(131, 130, 130, 1);
-// $red: rgba(255, 0, 0, 1);
+$chat-list-border-default: $purple-dark;
+
+//border-radius
+$button-border-radius: 10px;
+
+//sizes main for components and pages
+$main-button-font: $font-size-14;
+$main-input-font: $font-size-14;
+$input-label-font-size-default: $font-size-10;
+$input-font-error-size-default: $font-size-10;
+$input-label-line-height-default: $line-height-10;
+$link-font-size-default: $font-size-14;
+
+//font size
+$typography-font-large-50: $font-size-50;
+$typography-font-medium-20: $font-size-20;
+$typography-font-medium-14: $font-size-14;
+$typography-font-small-12: $font-size-12;
+$typography-font-small-10: $font-size-10;
+
 //
 
-//hover
+//font color
+$font-color-default: $black;
+$font-color-reverse: $white;
+$font-color-alt: $purple-dark;
+$font-color-alt-light: $purple-light;
+$font-color-error: $red;
 
+//line height
+$input-line-height-default: $line-height-14;
+$button-line-height-default: $line-height-14;
 
-// //shade
-// $grey-light: rgba(115, 114, 114, 0.5);
-// $purple-light: rgba(86, 3, 173, 0.1);
+//background color
+$background-transparent: $transparent-default;
+$background-default: $white;
+$background-alt: $purple-dark;
+$background-alt-hover: $purple-light;
+$background-chat-message: $purple-extra-light;
+$background-chat-message-alt: $purple-extra-light-alt;
+$background-message-grey: $grey-light-transparent;
+// $background-contact-color: $purple-extra-light-alt;
 
-// //shadows
+//main font family
+$base-font: Roboto Flex, Inter, sans-serif;

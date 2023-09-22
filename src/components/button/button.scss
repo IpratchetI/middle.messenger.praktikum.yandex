@@ -1,37 +1,39 @@
 @use "../../styles/_variables.scss" as vars;
 
+//main button
 .primary-button {
     width: 280px;
-    font-size: 13px;
-    line-height: 13px;
+    font-size: vars.$main-button-font;
+    line-height: vars.$button-line-height-default;
     padding: 12px 70px;
     text-align: center;
     background-color: vars.$button-main-color;
-    border-radius: 8px;
-    color: #fff;
-    font-family: Inter, sans-serif;
+    border-radius: vars.$button-border-radius;
+    color: vars.$font-color-reverse;
+    box-shadow: vars.$form-shadow;
+    font-family: vars.$base-font;
     transition: all ease-in-out 0.2s;
     margin-bottom: 15px;
     cursor: pointer;
-    box-shadow: vars.$form-shadow;
 
     &:hover {
-        font-family: Inter, sans-serif;
         background-color: vars.$button-hover-color;
     }
 }
 
-// .icon-button {
-//     background-color: vars.$primary-color;
-//     height: 28px;
-//     width: 28px;
-//     cursor: pointer;
-//     border-radius: 50%;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
+//icon button
+.icon-button {
+    background-color: vars.$background-alt;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 
-//     &:hover {
-//         // background-color: vars.$primary-color-hover;
-//     }
-// }
+    &:hover {
+        background-color: vars.$background-alt-hover;
+    }
+}

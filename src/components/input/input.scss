@@ -1,12 +1,12 @@
 @use "../../styles/_variables.scss" as vars;
 
 .input {
-    font-size: 13px;
-    line-height: 13px;
-    font-family: Inter, sans-serif;
-    padding: 7px 0;
+    font-size: vars.$main-input-font;
+    line-height: vars.$input-line-height-default;
+    font-family: vars.$base-font;
+    padding: 7px 5px;
     width: 100%;
-    background-color: transparent;
+    background-color: vars.$background-transparent;
     box-shadow: vars.$form-shadow;
 
     &:hover {
@@ -19,9 +19,10 @@
     }
 
     &__label {
-        color: vars.$base-text-color;
-        font-size: 9px;
-        line-height: 9px;
+        margin-left: 3px;
+        color: vars.$font-color-default;
+        font-size: vars.$input-label-font-size-default;
+        line-height: vars.$input-label-line-height-default;
     }
 
     &__container {
@@ -33,8 +34,8 @@
     }
 
     &__error {
-        color: vars.$error-color-font;
-        font-size: 10px;
+        color: vars.$font-color-error;
+        font-size: vars.$input-font-error-size-default;
         font-weight: 400;
         line-height: 10px;
 

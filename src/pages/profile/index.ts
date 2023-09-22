@@ -6,7 +6,7 @@ import { Block } from "../../utils/block.ts";
 import { validateEmail, validateLogin, validateNames, validatePassword, validatePhone } from "../../utils/validate.ts";
 import { FormComponent } from "../../components/form/index.ts";
 import { TProfile } from "../../utils/constants.ts";
-import backIcon from "../../assets/icons/back.svg";
+import backIcon from "../../assets/icons/arrow-back.svg";
 import "./profile.scss";
 
 interface ProfileProps {
@@ -122,9 +122,9 @@ export class ProfilePage extends Block<ProfileProps> {
         this.children = {
             form,
             backButton: new ButtonIconComponent({ url: "/", img: backIcon, type: "submit" }),
-            linkEdit: new LinkComponent({ text: "Изменить данные?", url: "/profile/edit" }),
-            linkPassword: new LinkComponent({ text: "Изменить пароль?", url: "/profile/change-password" }),
-            linkExit: new LinkComponent({ text: "Выйти?", url: "/", linkClasses: "profile__link--exit" }),
+            linkEdit: new LinkComponent({ text: "Изменить данные", url: "/profile/edit" }),
+            linkPassword: new LinkComponent({ text: "Изменить пароль", url: "/profile/change-password" }),
+            linkExit: new LinkComponent({ text: "Выйти", url: "/", linkClasses: "profile__link--exit" }),
         };
     }
 

@@ -5,37 +5,40 @@
         width: 310px;
         min-width: 310px;
         height: 100%;
-        background-color: #fbfbfb;
+        background-color: vars.$base-background-color;
         padding: 21px 10px 0;
     }
 
     &__profile-link {
         display: block;
-        // color: vars.$gray-color;
-        font-size: 12px;
+        color: vars.$font-color-alt;
+        font-size: vars.$typography-font-small-12;
         line-height: 12px;
         font-family: Inter, sans-serif;
         margin-left: auto;
         text-align: right;
         margin-bottom: 23px;
+        &:hover {
+            color: vars.$font-color-alt-light;
+        }
     }
 
     &__search {
-        // background-color: vars.$gray-color-medium;
+        background-color: vars.$background-message-grey;
         padding: 10px;
         border-radius: 5px;
         width: 100%;
         position: relative;
-        font-size: 12px;
+        font-size: vars.$typography-font-small-12;
         line-height: 12px;
-        // color: vars.$gray-color;
+        color: vars.$font-color-default;
         margin-bottom: 14px;
     }
 
     &__search::placeholder {
         content: "Поиск";
         text-align: center;
-        // background-image: url("../../assets/icons/magnifier.svg");
+        background-image: url("../../assets/icons/search.svg");
         background-repeat: no-repeat;
         background-position: 38% 0;
     }
@@ -51,11 +54,15 @@
     }
 
     &__persons-container::-webkit-scrollbar-thumb {
-        background-color: rgb(219 112 147 / 50%);
+        background-color: vars.$base-color-purple;
+
+        &:hover {
+            background-color: vars.$base-color-purple-light;
+        }
     }
 
     &__persons-container::-webkit-scrollbar-track {
-        background-color: transparent;
+        background-color: vars.$base-color-transparent;
     }
 }
 
@@ -66,21 +73,20 @@
 .persons {
     &__item {
         padding: 12px 0;
-        // border-top: vars.$gray-color solid 1px;
+        border-top: solid 1px vars.$chat-list-border-default;
         cursor: pointer;
         display: flex;
         height: 67px;
         position: relative;
 
         &:last-child {
-            // border-bottom: vars.$gray-color solid 1px;
+            border-bottom: solid 1px vars.$chat-list-border-default;
         }
 
         .item {
             &__avatar {
                 width: 47px;
                 height: 47px;
-                // background-color: vars.$gray-color-medium;
                 border-radius: 50%;
                 margin-right: 10px;
                 object-fit: cover;
@@ -88,7 +94,7 @@
 
             &__title {
                 margin-bottom: 4px;
-                font-size: 13px;
+                font-size: vars.$typography-font-medium-14;
                 line-height: 13px;
             }
 
@@ -98,15 +104,15 @@
             }
 
             &__text {
-                font-size: 12px;
+                font-size: vars.$typography-font-small-12;
                 line-height: 14px;
-                // color: vars.$gray-color;
+                color: vars.$font-color-default;
                 overflow: hidden;
                 white-space: nowrap;
                 text-overflow: ellipsis;
 
                 &--bold {
-                    color: #000;
+                    color: vars.$font-color-default;
                 }
             }
 
@@ -124,7 +130,7 @@
                     &__new-messenges-container {
                         width: 20px;
                         height: 20px;
-                        // background-color: vars.$primary-color;
+                        background-color: vars.$base-color-purple;
                         border-radius: 50%;
                         display: flex;
                         position: relative;
@@ -134,20 +140,20 @@
                         position: absolute;
                         width: 12px;
                         height: 12px;
-                        font-size: 11px;
+                        font-size: vars.$typography-font-small-10;
                         line-height: 12px;
                         top: 50%;
                         left: 50%;
                         transform: translate(-50%, -50%);
                         text-align: center;
                         align-self: center;
-                        color: #fff;
+                        color: vars.$base-background-color;
                     }
 
                     &__date {
-                        font-size: 9px;
+                        font-size: vars.$typography-font-small-10;
                         line-height: 13px;
-                        // color: vars.$gray-color;
+                        color: vars.$font-color-default;
                         margin-bottom: 12px;
                     }
                 }
@@ -156,6 +162,6 @@
     }
 
     &__item:hover {
-        // background-color: vars.$primary-color-pale;
+        background-color: vars.$background-message-grey;
     }
 }

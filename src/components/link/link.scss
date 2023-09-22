@@ -1,9 +1,9 @@
 @use "../../styles/_variables.scss" as vars;
 
 .link {
-    font-size: 13px;
+    font-size: vars.$link-font-size-default;
     line-height: 13px;
-    color: vars.$base-text-color-alt;
+    color: vars.$font-color-alt;
 
     &:hover {
         color: vars.$base-hover-color;
