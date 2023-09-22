@@ -18,6 +18,6 @@ http://localhost:3000/profile - страница данных профиля
 http://localhost:3000/profile/edit - страница изменения данных профиля
 http://localhost:3000/profile/change-password - страница изменения пароля
 
-netlify проект - https://component-messenger-practikum-yandex.netlify.app
+netlify проект - https://cerulean-cannoli-b20c1e.netlify.app/
 
 onClick использован как временное решение для перехода между страницами, пока не будет реализован роутер.
