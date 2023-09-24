@@ -1,15 +1,13 @@
-const express = require('express');
-const path = require('path');
+import express from "express";
+import { resolve } from "node:path";
 
 const app = express();
 const PORT = 3000;
-app.set("view engine", "handlebars");
 
-app.use(express.static('./dist'));
-app.use('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dist/index.html'));
+app.use(express.static("./dist"));
+
+app.get("/*", (_, res) => res.sendFile(resolve("dist", "index.html")));
+
+app.listen(PORT, () => {
+    console.log(`server is running on ${PORT}`);
 });
-
-app.listen(PORT, function () {
-  console.log(`Server is starting at port ${PORT}!`);
-}); 
