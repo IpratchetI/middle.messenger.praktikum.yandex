@@ -1,26 +1,28 @@
-import { BaseAPI } from './BaseAPI';
-import { UserInfoDTO, UserPasswordType, SearchUserByLoginType } from 'types';
+import {BaseApi} from "./BaseApi";
+import {User, ChangePassword} from "../utils/Types";
 
-class ProfileApi extends BaseAPI {
-  constructor() {
-    super({ path: '/user' });
-  }
+export type UserFields = Omit<User, 'password' | 'avatar'>
 
-  public changeAvatar(avatar: FormData) {
-    return this.put('/profile/avatar', avatar, {});
-  }
+export class ProfileApi extends BaseApi {
+    constructor() {
+        super('/user')
+    }
 
-  public changeUserInfo(userInfo: UserInfoDTO) {
-    return this.put('/profile', userInfo);
-  }
+    read(identifier: string): Promise<UserFields> {
+        return this.http.get(`/${identifier}`)
+    }
 
-  public changeUserPassword(userPassword: UserPasswordType) {
-    return this.put('/password', userPassword);
-  }
+    update(data: Record<string, unknown>): Promise<User> {
+        return this.http.put('/profile', data)
+    }
 
-  public searchUserByLogin({ login }: SearchUserByLoginType) {
-    return this.post('/search', login);
-  }
+    changeAvatar(data: FormData): Promise<UserFields> {
+        return this.http.put('/profile/avatar', data)
+    }
+
+    changePassword(data: ChangePassword): Promise<UserFields> {
+        return this.http.put('/password', data)
+    }
 }
 
-export default new ProfileApi();
+export const profileApi = new ProfileApi()

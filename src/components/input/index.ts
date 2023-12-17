@@ -1,97 +1,46 @@
-import { Block } from "../../utils/block.ts";
-import "./input.scss";
+import { Block } from "../../utils/Block";
+import {User} from "../../utils/Types";
 
-interface InputProps {
-    name: string;
-    labelValue: string;
-    inputErrorClasses?: string;
-    isAutofocus?: boolean;
-    events?: Record<string, (args: unknown) => void>;
-    error?: string;
-    inputClasses?: string;
-    inputContainerClasses?: string;
-    isDisabled?: boolean;
-    value?: string;
-    type?: string;
-    validate?: (args: string) => string | null;
+const inputTpl = '';
+
+interface InputProps extends User {
+  type: string;
+  name: string;
+  placeholder?: string;
+  value?: string;
+  className?: string;
+  events?: {
+    // eslint-disable-next-line no-unused-vars
+    focus: (event: Event) => void;
+    // eslint-disable-next-line no-unused-vars
+    blur: (event: Event) => void };
 }
 
-export class InputComponent extends Block<InputProps> {
-    constructor({
-        name,
-        labelValue,
-        inputErrorClasses = "",
-        error = "",
-        isAutofocus = false,
-        events = {},
-        inputClasses = "",
-        inputContainerClasses = "",
-        isDisabled = false,
-        value = "",
-        type = "text",
-        validate,
-    }: InputProps) {
-        const props = {
-            name,
-            error,
-            inputContainerClasses,
-            inputErrorClasses,
-            isAutofocus,
-            labelValue,
-            events,
-            inputClasses,
-            isDisabled,
-            value,
-            type,
-            validate,
-        };
-        super(props);
-    }
+export class Input extends Block {
+  constructor(props: InputProps) {
+    super('input', props);
+  }
 
-    public isInputValid() {
-        if (this.props.validate != null) {
-            return Boolean(!this.props.validate(this.value));
-        }
-
-        return true;
+  _init() {
+    this.element!.setAttribute('id', this.props.name);
+    this.element!.setAttribute('type', this.props.type);
+    this.element!.setAttribute('name', this.props.name);
+    if (this.props.placeholder){
+      this.element!.setAttribute('placeholder', this.props.placeholder);
     }
-
-    public validate() {
-        if (this.props.validate != null) {
-            const error = this.props.validate(this.value);
-            if (error != null) {
-                this.setProps({
-                    ...this.props,
-                    value: this.value,
-                    error,
-                    inputClasses: `${this.props.inputClasses} input--error`,
-                });
-            }
-            if (error == null && this.props.error != null) {
-                this.setProps({
-                    ...this.props,
-                    value: this.value,
-                    error: undefined,
-                    inputClasses: this.props.inputClasses?.replaceAll("input--error", "").trim(),
-                });
-            }
-        }
+    if (this.props.value){
+      this.element!.setAttribute('value', this.props.value);
     }
-
-    public get value() {
-        return this.element?.querySelector("input")?.value ?? "";
+    if (this.props.className){
+      this.element!.classList.add(this.props.className);
     }
+  }
 
-    protected render() {
-        return this.compile(
-            `<div class="input__container {{inputContainerClasses}}">
-                <label class="input__label" for={{name}}>{{labelValue}}</label>
-                <input {{#if isAutofocus }} autofocus {{/if}} type='{{type}}' value='{{value}}' {{#if isDisabled }} disabled {{/if}} id={{name}} type="text" name={{name}} class="input {{inputClasses}}" >
-                {{#if error}}
-                    <p class="input__error input__error--active">{{error}}</p>
-                {{/if}}
-            </div>`,
-            this.props,
-        );
-    }
+  get value() {
+    return (this.element as HTMLInputElement).value;
+  }
+
+  render(): string {
+    return this.compile(inputTpl, this.props);
+  }
 }

@@ -1,0 +1,48 @@
+@import '../../utils/style-global';
+
+.back{
+  @include flex-center;
+  width: 64px;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: $base-white-back;
+  border-right: 1px solid $base-light-gray;
+}
+
+.button-back{
+  width: 60px;
+  height: 60px;
+  margin: auto;
+  cursor: pointer;
+  border: none;
+  background: url("../img/back.svg") no-repeat;
+}
+
+.profile-box{
+  width: 510px;
+  height: 550px;
+  top: 47vh;
+  margin-top: -275px;
+  left: 50vw;
+  margin-left: -255px;
+  text-align: center;
+  position: relative;
+}
+
+.chat-name{
+  @include h3;
+  color: $base-black;
+  margin-top: 0;
+  margin-bottom: 60px;
+}
+
+.profileInput{
+  @include h4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $base-black;
+  position: relative;
+}

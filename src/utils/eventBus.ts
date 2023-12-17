@@ -1,35 +1,34 @@
-export type Listener<T extends unknown[] = any[]> = (...args: T) => void;
+// eslint-disable-next-line no-unused-vars
+type Handler = (...args: unknown[]) => void;
 
-export default class EventBus<
-  E extends string = string,
-  M extends { [K in E]: unknown[] } = Record<E, any[]>
-> {
-  private listeners: { [key in E]?: Listener<M[E]>[] } = {};
+export default class EventBus {
 
-  on(event: E, callback: Listener<M[E]>) {
+  private listeners: Record<string, Handler[]> = {};
+
+  on(event: string, callback: Handler): void {
     if (!this.listeners[event]) {
       this.listeners[event] = [];
     }
 
-    this.listeners[event]?.push(callback);
+    this.listeners[event].push(callback);
   }
 
-  off(event: E, callback: Listener<M[E]>) {
+  off(event: string, callback: Handler): void {
     if (!this.listeners[event]) {
       throw new Error(`Нет события: ${event}`);
     }
 
-    this.listeners[event] = this.listeners[event]?.filter(
-      (listener) => listener !== callback
+    this.listeners[event] = this.listeners[event].filter(
+      listener => listener !== callback
     );
   }
 
-  emit(event: E, ...args: M[E]) {
+  emit(event: string, ...args: unknown[]): void {
     if (!this.listeners[event]) {
-      return;
+      throw new Error(`Нет события: ${event}`);
     }
 
-    this.listeners[event]?.forEach(function (listener) {
+    this.listeners[event].forEach(function(listener) {
       listener(...args);
     });
   }

@@ -1,45 +1,39 @@
-import { BaseAPI } from './BaseAPI';
-import {
-  CreateChatType,
-  RemoveChatType,
-  AddUserToChatType,
-  GetChatTokenType,
-  GetUserForChatType,
-  RemoveUserFromChat,
-} from 'types';
+import {BaseApi} from "./BaseApi";
+import {User, ChatInfo} from "../utils/Types";
 
-class ChatApi extends BaseAPI {
-  constructor() {
-    super({ path: '/chats' });
-  }
+export class ChatsApi extends BaseApi {
+    constructor() {
+        super('/chats')
+    }
 
-  public createChat({ ...rest }: CreateChatType) {
-    return this.post('', { ...rest });
-  }
+    read(): Promise<ChatInfo[]> {
+        return this.http.get('/')
+    }
 
-  public getChats() {
-    return this.get('');
-  }
+    create(title: string) {
+        return this.http.post('/', { title })
+    }
 
-  public removeChatById({ ...rest }: RemoveChatType) {
-    return this.delete('', { ...rest });
-  }
+    delete(id: number): Promise<unknown> {
+        return this.http.delete('/', { chatId: id })
+    }
 
-  public addUserToChat({ ...rest }: AddUserToChatType) {
-    return this.put('users', { ...rest });
-  }
+    getUsers(id: number): Promise<Array<User & { role: string }>> {
+        return this.http.get(`/${id}/users`)
+    }
 
-  public getChatToken({ chatId }: GetChatTokenType) {
-    return this.post(`token/${chatId}`, {});
-  }
+    addUsers(users: number[], id: number): Promise<unknown> {
+        return this.http.put('/users', { users, chatId: id })
+    }
 
-  public getUserForChat({ chatId }: GetUserForChatType) {
-    return this.get(`${chatId}/users`);
-  }
+    deleteUsers(users: number[], id: number): Promise<unknown> {
+        return this.http.delete('/users', { users, chatId: id })
+    }
 
-  public removeUserFromChat({ ...rest }: RemoveUserFromChat) {
-    return this.delete('users', { ...rest });
-  }
+    async getToken(id: number): Promise<string | undefined> {
+        const response = await this.http.post<{ token: string }>(`/token/${id}`)
+        return response.token
+    }
 }
 
-export default new ChatApi();
+export const chatsApi = new ChatsApi()

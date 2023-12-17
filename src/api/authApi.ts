@@ -1,25 +1,26 @@
-import { BaseAPI } from './BaseAPI';
-import { SignupType, SigninType } from 'types';
+import { BaseApi } from './BaseApi'
+import {SigninData, SignupData, User} from "../utils/Types";
 
-class AuthAPI extends BaseAPI {
-  constructor() {
-    super({ path: '/auth' });
-  }
+export class AuthApi extends BaseApi {
+    constructor() {
+        super('/auth')
+    }
 
-  public signup({ ...rest }: SignupType) {
-    return this.post('signup', { ...rest });
-  }
+    signin(data: SigninData) {
+        return this.http.post('/signin', data)
+    }
 
-  public signin({ ...rest }: SigninType) {
-    return this.post('signin', { ...rest });
-  }
-  public signout() {
-    return this.post('logout', {});
-  }
+    signup(data: SignupData) {
+        return this.http.post('/signup', data)
+    }
 
-  public getInfo() {
-    return this.get('user');
-  }
+    read(): Promise<User> {
+        return this.http.get('/user')
+    }
+
+    logout() {
+        return this.http.post('/logout')
+    }
 }
 
-export default new AuthAPI();
+export const authApi = new AuthApi()
