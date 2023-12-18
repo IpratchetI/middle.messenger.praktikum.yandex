@@ -171,17 +171,6 @@
   margin-left: 10px;
 }
 
-.options{
-  @include chat-box-buttons;
-  top: 19.5px;
-  right: 0;
-  margin-right: 10px;
-  width: 3.5px;
-  height: 16px;
-  background-image: url("./img/options.svg");
-  background-size: cover;
-}
-
 .chat-info .separatory-line{
   position: absolute;
   top: 54px;
@@ -232,18 +221,6 @@
   margin: 11px;
 }
 
-.received-message-img-box{
-  width: 25vw;
-  height: 17vw;
-  box-sizing: border-box;
-  border: 1px solid $base-light-gray;
-  border-radius: 12px;
-  background-image: url("./img/received_img.png");
-  background-size: cover;
-  margin-bottom: 10px;
-  position: relative;
-}
-
 .received-message-img-box .message-time{
   color: $base-white;
   background-color: $base-gray;
@@ -266,14 +243,6 @@
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-}
-
-.delivery{
-  width: 9.3px;
-  height: 4px;
-  margin: 0 4px 12px 0;
-  background-image: url("./img/delivery_check.svg");
-  background-size: cover;
 }
 
 .sent-message-box .message-time{

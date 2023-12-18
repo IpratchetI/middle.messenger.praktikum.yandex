@@ -40,7 +40,7 @@ export class CorrespondenceList extends Block<Chatlist> {
 
         messagesController.connect(props.id, props.token)
           .then(() => {
-            console.log(`чат ${props.id} подключен`);
+            console.log(`Этот чат был подключен ${props.id}`);
           });
 
         this.children.chats = new correspondence({
