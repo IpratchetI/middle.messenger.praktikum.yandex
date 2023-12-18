@@ -1,26 +1,46 @@
-import { Block } from '../../utils/Block';
+import { Block } from "../../utils/Block";
+import {User} from "../../utils/Types";
 
-const avatarTpl = `
-  <img class="avatarImg" src="{{src}}"/>
-  <div class="changImgBox">
-    <h4 class="changeImg">Поменять<br>аватар</h4>
-  </div>`;
+const inputTpl = '';
 
-interface AvatarProps{
-  src: string;
-  events: { click: () => void; };
+interface InputProps extends User {
+  type: string;
+  name: string;
+  placeholder?: string;
+  value?: string;
+  className?: string;
+  events?: {
+    // eslint-disable-next-line no-unused-vars
+    focus: (event: Event) => void;
+    // eslint-disable-next-line no-unused-vars
+    blur: (event: Event) => void };
 }
 
-export class Avatar extends Block {
-  constructor(props: AvatarProps) {
-    super('div', props);
+export class Input extends Block {
+  constructor(props: InputProps) {
+    super('input', props);
   }
 
   _init() {
-    this.element!.classList.add('avatar');
+    this.element!.setAttribute('id', this.props.name);
+    this.element!.setAttribute('type', this.props.type);
+    this.element!.setAttribute('name', this.props.name);
+    if (this.props.placeholder){
+      this.element!.setAttribute('placeholder', this.props.placeholder);
+    }
+    if (this.props.value){
+      this.element!.setAttribute('value', this.props.value);
+    }
+    if (this.props.className){
+      this.element!.classList.add(this.props.className);
+    }
+  }
+
+  get value() {
+    return (this.element as HTMLInputElement).value;
   }
 
   render(): string {
-    return this.compile(avatarTpl, this.props);
+    return this.compile(inputTpl, this.props);
   }
 }
