@@ -1,5 +1,5 @@
 Sprint_3
-проект на netlify - 
+проект на netlify - https://component-messenger-practikum-yandex.netlify.app/
 
 Installation
 npm run start — build and launch the project on port 3000.
