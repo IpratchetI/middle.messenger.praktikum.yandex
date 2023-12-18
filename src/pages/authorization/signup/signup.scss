@@ -1,0 +1,15 @@
+@import '../authorization';
+
+.signup-box{
+  @include box;
+  width: 340px;
+  height: 615px;
+  margin-top: -307.5px;
+  margin-left: -170px;
+}
+
+.signup-box--content{
+  @include box--content;
+  width: 280px;
+  height: 615px;
+}

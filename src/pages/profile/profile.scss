@@ -1,88 +1,48 @@
-@use "../../styles/_variables.scss" as vars;
+@import '../../styles/main.scss';
 
-.profile {
-    &__navbar {
-        width: 64px;
-        height: 100vh;
-        background-color: #fbfbfb;
+.back{
+  @include flex-center;
+  width: 64px;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: $base-light-gray;
+  border-right: 1px solid $base-light-gray;
+}
 
-        // border-right: solid 1px vars.$gray-color-light;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+.button-back{
+  width: 60px;
+  height: 60px;
+  margin: auto;
+  cursor: pointer;
+  border: none;
+  background: url("../img/back.svg") no-repeat;
+}
 
-        .navbar {
-            &__back-button {
-                // background-color: vars.$primary-color;
-                width: 28px;
-                height: 28px;
-                border-radius: 50%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                cursor: pointer;
+.profile-box{
+  width: 510px;
+  height: 550px;
+  top: 47vh;
+  margin-top: -275px;
+  left: 50vw;
+  margin-left: -255px;
+  text-align: center;
+  position: relative;
+}
 
-                &:hover {
-                    // background-color: vars.$primary-color-hover;
-                }
-            }
-        }
-    }
+.chat-name{
+  @include h3;
+  color: $base-black;
+  margin-top: 0;
+  margin-bottom: 60px;
+}
 
-    &__container {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        flex-direction: column;
-        padding-top: 30px;
-    }
-
-    &__avatar {
-        width: 130px;
-        height: 130px;
-        object-fit: cover;
-
-        // background-color: vars.$gray-color-medium;
-        border-radius: 50%;
-        margin-bottom: 21px;
-    }
-
-    &__name {
-        margin-bottom: 30px;
-    }
-
-    &__data {
-        width: 510px;
-        flex-direction: column;
-        display: flex;
-        align-items: center;
-
-        .input--last {
-            margin-bottom: 30px;
-        }
-    }
-
-    &__form {
-        width: 100%;
-        box-shadow: none;
-        border-radius: none;
-        padding: 15px;
-    }
-
-    &__button--hidden {
-        display: none;
-    }
-
-    &__link {
-        padding: 10px 0;
-
-        &--exit {
-            color: #f00;
-        }
-    }
-
-    &__submit {
-        display: block;
-        margin: 0 auto;
-    }
+.profileInput{
+  @include h4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $base-black;
+  position: relative;
 }

@@ -1,0 +1,74 @@
+@import '../profile';
+
+.avatar, .changImgBox, .avatarImg {
+  width: 130px;
+  height: 130px;
+  border-radius: 130px;
+}
+
+.avatar{
+  margin: auto;
+  margin-bottom: 20px;
+  background-image: url("../img/avatar.svg");
+  position: relative;
+}
+
+.avatarImg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.changImgBox{
+  background-color: $base-black;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+
+  &:hover{
+    opacity: 1;
+    background-color: #1e1e1ead;
+  }
+}
+
+.changeImg{
+  @include h4;
+  color: $base-white;
+  margin-top: 20px;
+}
+
+.profile #email,
+.profile #login,
+.profile #first_name,
+.profile #second_name,
+.profile #display_name,
+.profile #phone{
+  width: 300px;
+  border:none;
+  padding: 10px 0;
+  outline: none;
+  color: $base-gray;
+  text-align: right;
+  background-color: $transparent-default;
+}
+
+.profile-box--buttons{
+  @include flex-column;
+  align-items: flex-start;
+  width: 100%;
+  position: absolute;
+  bottom: -10;
+}
+
+.link{
+  margin: 10px 0;
+}
+
+.profile-box--buttons .logout{
+  color: $base-red;
+}
