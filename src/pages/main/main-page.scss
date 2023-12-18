@@ -1,4 +1,4 @@
-@import '../../utils/style-global';
+@import '../../styles/main.scss';
 
 @mixin absolute-margin{
   position: absolute;
@@ -8,7 +8,7 @@
 @mixin chat-box-buttons{
   position: absolute;
   border: none;
-  background-color: transparent;
+  background-color: $transparent-default;
   background-repeat: no-repeat;
   cursor: pointer;
   padding: 0;
@@ -27,7 +27,7 @@
   left: 0;
   color: $base-white;
   border-right: 1px solid $base-light-gray;
-  background-color: $base-white-back;
+  background-color: $base-light-gray;
 }
 
 .chats--content{
@@ -115,7 +115,7 @@
 
 .date{
   @include absolute-margin;
-  font-size: 9px;
+  font-size: $font-size-9;
   color: $base-gray;
   top: 0;
 }
@@ -126,9 +126,9 @@
   height: 20px;
   bottom: 10px;
   right: 10px;
-  background: $base-blue;
+  background: $base-puprle;
   border-radius: 50%;
-  font-size: 11px;
+  font-size: $font-size-11;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -213,7 +213,7 @@
   width: 35vw;
   box-sizing: border-box;
   border-radius: 12px;
-  background-color: $base-white-back;
+  background-color: $base-light-gray;
   margin-bottom: 10px;
 }
 
@@ -236,7 +236,7 @@
   width: 25vw;
   height: 17vw;
   box-sizing: border-box;
-  border: 1px solid $base-white-back;
+  border: 1px solid $base-light-gray;
   border-radius: 12px;
   background-image: url("./img/received_img.png");
   background-size: cover;
@@ -277,7 +277,7 @@
 }
 
 .sent-message-box .message-time{
-  color: $base-blue;
+  color: $base-puprle;
 }
 
 .attach{
@@ -368,7 +368,7 @@
   @include h4;
   width: 100%;
   border:none;
-  border-bottom: 1px solid $base-blue;
+  border-bottom: 1px solid $base-puprle;
   padding: 7px 0;
   outline: none;
   color: $base-black;
@@ -386,7 +386,7 @@
 .deleteChat, .close{
   @include h3;
   border: none;
-  background-color: transparent;
+  background-color: $transparent-default;
   color: $base-gray;
   position: absolute;
   right: 9px;

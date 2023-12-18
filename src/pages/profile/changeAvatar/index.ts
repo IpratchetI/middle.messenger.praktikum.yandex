@@ -1,4 +1,4 @@
-import './style.scss';
+import './changeAvatar.scss';
 import { Block } from '../../../utils/Block';
 import {Input} from "../../../components/Input";
 import {Label} from "../../../components/Label";

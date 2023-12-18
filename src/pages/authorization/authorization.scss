@@ -1,4 +1,4 @@
-@import '../../utils/style-global';
+@import '../../styles/main.scss';
 
 @mixin box{
   position: absolute;
@@ -44,7 +44,7 @@
   @include h4;
   width: 100%;
   border:none;
-  border-bottom: 1px solid $base-blue;
+  border-bottom: 1px solid $base-puprle;
   padding: 7px 0;
   outline: none;
   color: $base-black;

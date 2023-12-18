@@ -1,4 +1,4 @@
-import './style.scss';
+import './signup.scss';
 import {Block} from "../../../utils/Block";
 import {Button} from "../../../components/Button";
 import {LabelInput} from "../../../components/LabelInput";

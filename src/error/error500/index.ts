@@ -1,4 +1,4 @@
-import '../style.scss'
+import '../error.scss'
 import {Block} from "../../utils/Block";
 import {Error} from "../../components/Error";
 
@@ -12,7 +12,7 @@ export class Error500 extends Block {
     _init() {
         this.children.error = new Error({
             error: '500',
-            title: 'Мы уже фиксим',
+            title: 'Уже фиксим',
         })
     }
 

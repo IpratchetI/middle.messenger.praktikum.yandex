@@ -1,4 +1,4 @@
-import './style.scss';
+import './profileInfo.scss';
 import {Block} from "../../../utils/Block";
 import {Back} from "../../../components/Back";
 import {Button} from "../../../components/Button";

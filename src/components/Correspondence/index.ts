@@ -8,7 +8,6 @@ const correspondenceTpl = `
   <div class="correspondence-info">
     <div class="correspondence-avatar">
       {{{avatar}}}
-<!--      <img class="chatListAvatar" src="{{avatar}}"/>-->
     </div>
     <div class="user-info">
       <h4 class="user-login">{{title}}</h4>
@@ -39,7 +38,7 @@ export class Correspondence extends Block {
         click: () => {
           chatsController.delete(store.getState().selectedChat)
             .then(() => {
-              console.log(`чат ${store.getState().selectedChat} удален`)
+              console.log(`этот чат был удален ${store.getState().selectedChat}`)
             })
             .catch((e) => {
               console.error(e);

@@ -1,4 +1,4 @@
-import './style.scss'
+import './main-page.scss'
 import {Block} from "../../utils/Block";
 import {Button} from "../../components/Button";
 import {Input} from "../../components/Input";
@@ -59,7 +59,7 @@ export class Main extends Block {
               Object.keys(store.getState().chats).map((chat) => {
                   messagesController.connect(store.getState().chats[chat].id, store.getState().chats[chat].token)
                     .then(() => {
-                        console.log(`чат ${store.getState().chats[chat].id} подключен`);
+                        console.log(`вы подключены к этому чату ${store.getState().chats[chat].id}`);
                     });
               });
           });
