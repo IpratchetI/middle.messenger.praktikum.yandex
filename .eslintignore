@@ -1,5 +1,8 @@
+/.github
+/.idea
+/.parcel-cache
 /dist
-**/*.min.js
-/node_modules 
-.github
-/build
+/htmls
+/node_modules
+/.gitignore
+/README.md
