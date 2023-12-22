@@ -21,7 +21,7 @@ export class Error extends Block {
   _init() {
     this.element!.classList.add('error-content');
     this.children.errorBack = new Button({
-      buttonTitle: 'Назад к чатам',
+      buttonTitle: 'Back to chats',
       buttonClassName: 'link',
       buttonClassNameSpecial: 'error-link',
       events: {
@@ -32,7 +32,7 @@ export class Error extends Block {
     });
   }
 
-  render(): string {
+  render() {
     return this.compile(errorTpl, this.props);
   }
 }
