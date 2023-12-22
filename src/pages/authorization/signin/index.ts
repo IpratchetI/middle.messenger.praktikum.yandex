@@ -8,7 +8,7 @@ import {router} from "../../../utils/Router";
 
 const signinTpl =
     ` <div class="signin-box--content">
-        <h2 class="title">Вход</h2>
+        <h2 class="title">Sign in</h2>
         <form class="authorization">
             {{{login}}}
             {{{password}}}
@@ -18,28 +18,30 @@ const signinTpl =
       </div>`;
 
 export class Signin extends Block{
-    constructor(props) {
+    constructor(props: any) {
         super('main', props);
     }
 
     _init() {
         this.element!.classList.add('signin-box');
         this.children.login = new LabelInput({
+            ...this.props,
             name: 'login',
             type: 'text',
-            labelTitle: 'Логин',
+            labelTitle: 'Login',
             labelInputClassName: 'labelInputSignin',
             bottomError: 'bottomErrorAuthorization',
         });
         this.children.password = new LabelInput({
+            ...this.props,
             name: 'password',
             type: 'password',
-            labelTitle: 'Пароль',
+            labelTitle: 'Password',
             labelInputClassName: 'labelInputSignin',
             bottomError: 'bottomErrorAuthorization',
         });
         this.children.formButton = new Button({
-            buttonTitle: 'Войти',
+            buttonTitle: 'Sign in',
             buttonClassName: 'button',
             buttonType: 'button',
             events: {
@@ -47,7 +49,7 @@ export class Signin extends Block{
             },
         });
         this.children.link = new Button({
-            buttonTitle: 'Нет аккаунта?',
+            buttonTitle: 'Sign up',
             buttonClassName: 'link',
             events: {
                 click: () => {
@@ -57,7 +59,7 @@ export class Signin extends Block{
         });
     }
 
-    sanitizeInput(input) {
+    sanitizeInput(input: any) {
         const scriptRegex = /<\s*[sS][^>]*>/;
         const linkRegex = /<a\b[^>]*>/gi;
 
@@ -71,7 +73,7 @@ export class Signin extends Block{
     onClick(event: Event) {
         event.preventDefault()
         const inputs = document.querySelectorAll('input');
-        const data: Record<string, unknown> = {};
+        const data: any = {};
         Array.from(inputs).forEach((input) => {
             if (this.sanitizeInput(input.value)){
                 data[input.name] = input.value;
@@ -81,7 +83,7 @@ export class Signin extends Block{
         authController.signin(data);
     }
 
-    render(): string {
+    render() {
         return this.compile(signinTpl, this.props);
     }
 }

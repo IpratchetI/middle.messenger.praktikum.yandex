@@ -11,8 +11,8 @@ import {User} from "../../../utils/Types";
 const changePasswordTpl = `
     {{{buttonBack}}}
     <main class="profile-box">
-      <div class="avatar"></div>
-      <h3 class="chat-name">Иван</h3>
+      <div class="avatar">{{{avatar}}}</div>
+      <h3 class="chat-name">{{{login}}}</h3>
       <form action="/profile">
         {{{oldPassword}}}
         <hr class="separatory-line">
@@ -24,35 +24,39 @@ const changePasswordTpl = `
     </main>`;
 
 export class ChangePassword extends Block{
-    constructor(props) {
+    constructor(props: any) {
         super('div', props);
     }
 
     _init() {
+        this.element!.classList.add('ChangePassword');
         this.children.buttonBack = new Back({});
         this.children.oldPassword = new LabelInput({
+            ...this.props,
             name: 'oldPassword',
             labelInputClassName: 'profileInput',
             type: 'password',
-            labelTitle: 'Старый пароль',
+            labelTitle: 'Old password',
             bottomError: 'bottomErrorProfile',
         });
         this.children.newPassword = new LabelInput({
+            ...this.props,
             name: 'newPassword',
             labelInputClassName: 'profileInput',
             type: 'password',
-            labelTitle: 'Новый пароль',
+            labelTitle: 'New password',
             bottomError: 'bottomErrorProfile',
         });
         this.children.repeatPassword = new LabelInput({
+            ...this.props,
             name: 'repeatNewPassword',
             labelInputClassName: 'profileInput',
             type: 'password',
-            labelTitle: 'Повторите новый пароль',
+            labelTitle: 'Repeat new password',
             bottomError: 'bottomErrorProfile',
         });
         this.children.formButton = new Button({
-            buttonTitle: 'Сохранить',
+            buttonTitle: 'Save',
             buttonClassName: 'button',
             buttonType: 'button',
             events: {
@@ -61,7 +65,7 @@ export class ChangePassword extends Block{
         });
     }
 
-    sanitizeInput(input) {
+    sanitizeInput(input: any) {
         const scriptRegex = /<\s*[sS][^>]*>/;
         const linkRegex = /<a\b[^>]*>/gi;
 
@@ -72,7 +76,7 @@ export class ChangePassword extends Block{
         }
     }
 
-    getValue(selector) {
+    getValue(selector: any) {
         return document.querySelector(selector).value;
     }
 
@@ -92,13 +96,13 @@ export class ChangePassword extends Block{
         }
     }
 
-    protected componentDidUpdate(_oldProps: User, newProps: User): boolean {
+    componentDidUpdate(_oldProps: User, newProps: User): any {
         if (newProps){
             this.props = newProps;
         }
     }
 
-    render(): string {
+    render() {
         return this.compile(changePasswordTpl, this.props);
     }
 }

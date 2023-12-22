@@ -38,7 +38,7 @@ export class Correspondence extends Block {
         click: () => {
           chatsController.delete(store.getState().selectedChat)
             .then(() => {
-              console.log(`этот чат был удален ${store.getState().selectedChat}`)
+              console.log(`чат ${store.getState().selectedChat} удален`)
             })
             .catch((e) => {
               console.error(e);
@@ -48,17 +48,17 @@ export class Correspondence extends Block {
     })
   }
 
-  protected componentDidUpdate(_oldProps: CorrespondenceProps, newProps: CorrespondenceProps): boolean {
+  componentDidUpdate(_oldProps: CorrespondenceProps, newProps: CorrespondenceProps): any {
     if (newProps){
         this.props = newProps;
       }
   }
 
-  render(): string {
+  render() {
     return this.compile(correspondenceTpl, {
       ...this.props,
       avatar: this.props.avatar ? `<img class="chatListAvatar" src="https://ya-praktikum.tech/api/v2/resources${this.props.avatar}"/>` : '',
-      last_message: this.props.last_message ? 'Сообщение' : 'Нет сообщений',
+      last_message: this.props.last_message ? 'Тут должна быть сообщенька' : 'Нет сообщений',
       title: this.props.title,
       unread_count: this.props.unread_count,
       isSelected: this.props.id === this.props.selectedChat?.id,

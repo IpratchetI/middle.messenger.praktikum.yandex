@@ -59,7 +59,7 @@ export class Main extends Block {
               Object.keys(store.getState().chats).map((chat) => {
                   messagesController.connect(store.getState().chats[chat].id, store.getState().chats[chat].token)
                     .then(() => {
-                        console.log(`вы подключены к этому чату ${store.getState().chats[chat].id}`);
+                        console.log(`chat ${store.getState().chats[chat].id} on`);
                     });
               });
           });
@@ -68,44 +68,47 @@ export class Main extends Block {
         this.children.chatHistory = new chatHistory();
 
         this.children.addChat = new PopUp({
+            ...this.props,
             classBox: 'addChat',
             name: 'chatName',
             type: 'text',
             className: 'chatName',
             labelInputClassName: 'labelInputPopUp',
-            labelTitle: 'Название чата',
-            buttonTitle: 'Добавить',
+            labelTitle: 'Chat name',
+            buttonTitle: 'Add',
             buttonClassName: 'button',
             buttonClassNameSpecial: 'popUpButton',
             buttonType: 'submit',
         });
         this.children.addId = new PopUp({
+            ...this.props,
             classBox: 'addId',
             name: 'addId',
             type: 'text',
             className: 'addId',
             labelInputClassName: 'labelInputPopUp',
-            labelTitle: 'ID пользователя',
-            buttonTitle: 'Добавить',
+            labelTitle: 'User ID',
+            buttonTitle: 'Add',
             buttonClassName: 'button',
             buttonClassNameSpecial: 'popUpButton',
             buttonType: 'submit',
         });
         this.children.deleteId = new PopUp({
+            ...this.props,
             classBox: 'deleteId',
             name: 'deleteId',
             type: 'text',
             className: 'deleteId',
             labelInputClassName: 'labelInputPopUp',
-            labelTitle: 'ID пользователя',
-            buttonTitle: 'Удалить',
+            labelTitle: 'User ID',
+            buttonTitle: 'Delete',
             buttonClassName: 'button',
             buttonClassNameSpecial: 'popUpButton',
             buttonType: 'submit',
         });
 
         this.children.profileButton = new Button({
-            buttonTitle: 'Профиль',
+            buttonTitle: 'Profile >',
             buttonClassName: 'link',
             buttonClassNameSpecial: 'link-profile',
             events: {
@@ -115,13 +118,14 @@ export class Main extends Block {
             },
         });
         this.children.search = new Input({
+            ...this.props,
             name: 'search',
             type: 'search',
-            placeholder: 'Поиск',
+            placeholder: 'Search',
             className: 'search',
         });
         this.children.addChatButton = new Button({
-            buttonTitle: 'Добавить чат',
+            buttonTitle: 'Add chat',
             buttonClassName: 'button',
             events: {
                 click: (e) => {
@@ -131,7 +135,7 @@ export class Main extends Block {
         });
 
         this.children.addButton = new Button({
-            buttonTitle: 'Добавить пользователя',
+            buttonTitle: 'Add user',
             buttonClassName: 'button',
             events: {
                 click: (e) => {
@@ -140,7 +144,7 @@ export class Main extends Block {
             },
         });
         this.children.deleteButton = new Button({
-            buttonTitle: 'Удалить пользователя',
+            buttonTitle: 'Delete user',
             buttonClassName: 'button',
             events: {
                 click: (e) => {
@@ -158,9 +162,10 @@ export class Main extends Block {
             },
         });
         this.children.inputSendMessage = new Input({
+            ...this.props,
             type: 'message',
             name: 'message',
-            placeholder: 'Сообщение',
+            placeholder: 'Message',
         });
         this.children.sendButton = new Button({
             buttonClassName: 'send',
@@ -171,7 +176,7 @@ export class Main extends Block {
         });
     }
 
-    sanitizeInput(input) {
+    sanitizeInput(input: any) {
         const scriptRegex = /<\s*[sS][^>]*>/;
         const linkRegex = /<a\b[^>]*>/gi;
 
@@ -182,7 +187,7 @@ export class Main extends Block {
         }
     }
 
-    getValue(selector) {
+    getValue(selector: any) {
         return document.querySelector(selector).value;
     }
 
@@ -193,18 +198,20 @@ export class Main extends Block {
             messagesController.sendMessage(store.getState().selectedChat, message);
         }
         // eslint-disable-next-line
-        let input = document.querySelector('#message');
-        input.value = '';
+        let input: HTMLInputElement | null= document.querySelector('#message');
+        if (input !== null){
+            input.value = '';
+        }
     }
 
-    popUp(event: Event, selector){
+    popUp(event: Event, selector: any){
         event.preventDefault();
         const popUp = document.querySelector(selector);
         popUp.classList.remove('displayNone');
         popUp.classList.add('boxBackground');
     }
 
-    render(): string {
+    render() {
         return this.compile(mainTpl, this.props);
     }
 }

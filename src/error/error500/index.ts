@@ -5,18 +5,18 @@ import {Error} from "../../components/Error";
 const error500Tpl = '{{{error}}}';
 
 export class Error500 extends Block {
-    constructor(props) {
+    constructor(props: any) {
         super('div', props);
     }
 
     _init() {
         this.children.error = new Error({
             error: '500',
-            title: 'Уже фиксим',
+            title: 'We are already fixing',
         })
     }
 
-    render(): string {
+    render() {
         return this.compile(error500Tpl, this.props);
     }
 }
