@@ -54,17 +54,18 @@ class ChatName extends Block{
         this.element!.classList.add('chat-name');
     }
 
-    render(): string {
+    render() {
         return this.compile(chatNameTpl, this.props);
     }
 }
 
 export class ProfileInfo extends Block{
-    constructor(props) {
+    constructor(props: any) {
         super('div', props);
     }
 
     _init() {
+        this.element!.classList.add('ProfileInfo');
         this.children.buttonBack = new Back({});
         this.children.changeAvatar = new ChangeAvatar({});
         this.children.avatar = new Avatar({
@@ -75,55 +76,61 @@ export class ProfileInfo extends Block{
         })
         this.children.chat_name = new ChatName({name: this.props.first_name});
         this.children.email = new LabelInput({
+            ...this.props,
             name: 'email',
             labelInputClassName: 'profileInput',
             type: 'email',
-            labelTitle: 'Почта',
+            labelTitle: 'Email',
             value: this.props.email,
             bottomError: 'bottomErrorProfile',
         });
         this.children.login = new LabelInput({
+            ...this.props,
             name: 'login',
             labelInputClassName: 'profileInput',
             type: 'text',
-            labelTitle: 'Логин',
+            labelTitle: 'Login',
             value: this.props.login,
             bottomError: 'bottomErrorProfile',
         });
         this.children.first_name = new LabelInput({
+            ...this.props,
             name: 'first_name',
             labelInputClassName: 'profileInput',
             type: 'text',
-            labelTitle: 'Имя',
+            labelTitle: 'First name',
             value: this.props.first_name,
             bottomError: 'bottomErrorProfile',
         });
         this.children.second_name = new LabelInput({
+            ...this.props,
             name: 'second_name',
             labelInputClassName: 'profileInput',
             type: 'text',
-            labelTitle: 'Фамилия',
+            labelTitle: 'Second name',
             value: this.props.second_name,
             bottomError: 'bottomErrorProfile',
         });
         this.children.display_name = new LabelInput({
+            ...this.props,
             name: 'display_name',
             labelInputClassName: 'profileInput',
             type: 'text',
-            labelTitle: 'Имя в чате',
+            labelTitle: 'Display name',
             value: this.props.display_name,
             bottomError: 'bottomErrorProfile',
         });
         this.children.phone = new LabelInput({
+            ...this.props,
             name: 'phone',
             labelInputClassName: 'profileInput',
             type: 'tel',
-            labelTitle: 'Телефон',
+            labelTitle: 'Phone',
             value: this.props.phone,
             bottomError: 'bottomErrorProfile',
         });
         this.children.changeDate = new Button({
-            buttonTitle: 'Изменить данные',
+            buttonTitle: 'Change date',
             buttonClassName: 'link',
             buttonClassNameSpecial: 'change-date',
             events: {
@@ -131,7 +138,7 @@ export class ProfileInfo extends Block{
             }
         });
         this.children.changePassword = new Button({
-            buttonTitle: 'Изменить пароль',
+            buttonTitle: 'Change password',
             buttonClassName: 'link',
             buttonClassNameSpecial: 'change-password',
             events: {
@@ -139,7 +146,7 @@ export class ProfileInfo extends Block{
             }
         });
         this.children.logout = new Button({
-            buttonTitle: 'Выйти',
+            buttonTitle: 'Logout',
             buttonClassName: 'link',
             buttonClassNameSpecial: 'logout',
             events: {
@@ -152,11 +159,13 @@ export class ProfileInfo extends Block{
 
     changeAvatar(event: Event){
         event.preventDefault();
-        const changeAvatarBox = document.querySelector('.changeAvatarBoxBackground');
-        changeAvatarBox.classList.remove('displayNone');
+        const changeAvatarBox: HTMLDivElement | null = document.querySelector('.changeAvatarBoxBackground');
+        if (changeAvatarBox !== null){
+            changeAvatarBox.classList.remove('displayNone');
+        }
     }
 
-    sanitizeInput(input) {
+    sanitizeInput(input: any) {
         const scriptRegex = /<\s*[sS][^>]*>/;
         const linkRegex = /<a\b[^>]*>/gi;
 
@@ -170,7 +179,7 @@ export class ProfileInfo extends Block{
     onClick(event: Event) {
         event.preventDefault();
         const inputs = document.querySelectorAll('input');
-        const data: Record<string, unknown> = {};
+        const data: Record<string, string> = {};
         Array.from(inputs).forEach((input) => {
             if (this.sanitizeInput(input.value)){
                 data[input.name] = input.value;
@@ -180,13 +189,13 @@ export class ProfileInfo extends Block{
         profileController.updateProfile(data);
     }
 
-    protected componentDidUpdate(_oldProps: User, newProps: User): boolean {
+    componentDidUpdate(_oldProps: User, newProps: User): any {
         if (newProps){
             this.props = newProps;
         }
     }
 
-    render(): string {
+    render() {
         return this.compile(profileInfoTpl, this.props);
     }
 }

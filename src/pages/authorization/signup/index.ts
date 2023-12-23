@@ -9,7 +9,7 @@ import {router} from "../../../utils/Router";
 
 const signupTpl =
   ` <div class="signup-box--content">
-        <h2 class="title">Регистрация</h2>
+        <h2 class="title">Sign up</h2>
         <form class="authorization">
             {{{email}}}
             {{{login}}}
@@ -24,63 +24,70 @@ const signupTpl =
       </div>`;
 
 export class Signup extends Block{
-    constructor(props) {
+    constructor(props: any) {
         super('main', props);
     }
 
     _init() {
         this.element!.classList.add('signup-box');
         this.children.email = new LabelInput({
+            ...this.props,
             name: 'email',
             type: 'email',
-            labelTitle: 'Почта',
+            labelTitle: 'Email',
             labelInputClassName: 'labelInputSignup',
             bottomError: 'bottomErrorAuthorization',
         });
         this.children.login = new LabelInput({
+            ...this.props,
             name: 'login',
             type: 'text',
-            labelTitle: 'Логин',
+            labelTitle: 'Login',
             labelInputClassName: 'labelInputSignup',
             bottomError: 'bottomErrorAuthorization',
         });
         this.children.first_name = new LabelInput({
+            ...this.props,
             name: 'first_name',
             type: 'text',
-            labelTitle: 'Имя',
+            labelTitle: 'First name',
             labelInputClassName: 'labelInputSignup',
             bottomError: 'bottomErrorAuthorization',
         });
         this.children.second_name = new LabelInput({
+            ...this.props,
             name: 'second_name',
             type: 'text',
-            labelTitle: 'Фамилия',
+            labelTitle: 'Second name',
             labelInputClassName: 'labelInputSignup',
             bottomError: 'bottomErrorAuthorization',
         });
         this.children.phone = new LabelInput({
+            ...this.props,
             name: 'phone',
             type: 'tel',
-            labelTitle: 'Телефон',
+            labelTitle: 'Phone',
             labelInputClassName: 'labelInputSignup',
             bottomError: 'bottomErrorAuthorization',
         });
         this.children.password = new LabelInput({
+            ...this.props,
             name: 'password',
             type: 'password',
-            labelTitle: 'Пароль',
+            labelTitle: 'Password',
             labelInputClassName: 'labelInputSignup',
             bottomError: 'bottomErrorAuthorization',
         });
         this.children.repeatPassword = new LabelInput({
+            ...this.props,
             name: 'repeatPassword',
             type: 'password',
-            labelTitle: 'Пароль (ещё раз)',
+            labelTitle: 'Repeat password',
             labelInputClassName: 'labelInputSignup',
             bottomError: 'bottomErrorAuthorization',
         });
         this.children.formButton = new Button({
-            buttonTitle: 'Зарегистрироваться',
+            buttonTitle: 'Sign up',
             buttonClassName: 'button',
             buttonType: 'button',
             events: {
@@ -88,7 +95,7 @@ export class Signup extends Block{
             },
         });
         this.children.link = new Button({
-            buttonTitle: 'Войти',
+            buttonTitle: 'Sign in',
             buttonClassName: 'link',
             events: {
                 click: () => {
@@ -98,7 +105,7 @@ export class Signup extends Block{
         });
     }
 
-    sanitizeInput(input) {
+    sanitizeInput(input: any) {
         const scriptRegex = /<\s*[sS][^>]*>/;
         const linkRegex = /<a\b[^>]*>/gi;
 
@@ -109,13 +116,13 @@ export class Signup extends Block{
         }
     }
 
-    getValue(selector) {
+    getValue(selector: any) {
         return document.querySelector(selector).value;
     }
 
     onSubmit() {
         const inputs = document.querySelectorAll('input');
-        const data: Record<string, unknown> = {};
+        const data: any = {};
         Array.from(inputs).forEach((input) => {
             if (this.sanitizeInput(input.value)){
                 data[input.name] = input.value;
@@ -129,7 +136,7 @@ export class Signup extends Block{
         }
     }
 
-    render(): string {
+    render() {
         return this.compile(signupTpl, this.props);
     }
 }

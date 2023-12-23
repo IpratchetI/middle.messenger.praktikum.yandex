@@ -52,7 +52,7 @@
   color: $base-black;
   border: 0;
   border-radius: 5px;
-  background: $base-light-gray url("./img/search.svg") no-repeat 5px center;
+  background: $base-light-gray url("../../assets/search.svg") no-repeat 5px center;
   margin-bottom: 14px;
 
   &::placeholder {
@@ -254,7 +254,7 @@
   width: 32px;
   height: 32px;
   bottom: 11px;
-  background-image: url("./img/attach.svg");
+  background-image: url("../../assets/attach.svg");
 }
 
 #message{
@@ -282,7 +282,7 @@
   height: 28px;
   right: 0;
   bottom: 13px;
-  background-image: url("./img/send.svg");
+  background-image: url("../../assets/send.svg");
 }
 
 .send-message-box .separatory-line{

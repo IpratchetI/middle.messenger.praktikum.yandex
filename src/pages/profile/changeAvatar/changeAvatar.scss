@@ -7,7 +7,7 @@
   width: 100vw;
   height: 100vh;
   z-index: 1000;
-  background-color: #1e1e1ead;
+  background-color: $base-black;
   position: absolute;
 }
 
@@ -35,7 +35,7 @@
 .changeAvatarLabelInput label{
   @include h4;
   text-decoration-line: underline;
-  color: $base-puprle;
+  // color: $base-puprple;
   margin-bottom: 20px;
   cursor: pointer;
 }
